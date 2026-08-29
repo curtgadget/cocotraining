@@ -1,0 +1,763 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consulting Collective — SCLARC Report Writing Course</title>
+<style>
+:root{color-scheme:light; --plum:#5B2A4E; --teal:#3E6E76; --ink:#232323; --muted:#6b6b6b;
+--line:#e3dbe1; --plumbg:#f4eef2; --tealbg:#e9f1f2; --warnbg:#fbf3e6; --warnln:#c9a24b;}
+*{box-sizing:border-box}
+body{margin:0;background:#faf8fa;color:var(--ink);font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--teal)}
+.wrap{display:grid;grid-template-columns:264px 1fr;max-width:1180px;margin:0 auto}
+nav{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:22px 16px;border-right:1px solid var(--line);background:#fff}
+nav .brand{font-weight:800;color:var(--plum);font-size:18px;line-height:1.2}
+nav .brand small{display:block;color:var(--teal);font-weight:600;font-size:12px;margin-top:3px}
+nav a{display:block;color:#444;text-decoration:none;font-size:13.5px;padding:5px 8px;border-radius:6px;margin:1px 0}
+nav a:hover{background:var(--plumbg);color:var(--plum)}
+nav .sec{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 6px 4px}
+main{padding:34px 40px 90px;max-width:820px}
+header.hero{border-bottom:3px solid var(--plum);padding-bottom:16px;margin-bottom:8px}
+header.hero h1{color:var(--plum);margin:0 0 4px;font-size:28px}
+header.hero p{color:var(--teal);margin:0;font-weight:600}
+h2{color:var(--plum);margin-top:40px;font-size:22px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{color:var(--teal);margin-top:26px;font-size:17px}
+h4{margin:16px 0 4px;font-size:14.5px;color:#333}
+.tldr{background:var(--tealbg);border-left:4px solid var(--teal);padding:12px 16px;border-radius:6px;margin:14px 0}
+.tldr b{color:var(--teal)}
+.note{background:var(--plumbg);border-left:4px solid var(--plum);padding:12px 16px;border-radius:6px;margin:14px 0}
+.warn{background:var(--warnbg);border-left:4px solid var(--warnln);padding:12px 16px;border-radius:6px;margin:14px 0}
+.warn b{color:#8a6d1f}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.ba .col{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#fff}
+.ba .before{background:#fbf1f1;border-color:#ecc9c9}
+.ba .after{background:#eef6f0;border-color:#c7e2cf}
+.ba h5{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.ba .before h5{color:#a23b3b}.ba .after h5{color:#2e7d46}
+pre{background:#2f2536;color:#f3ecf1;padding:14px 16px;border-radius:8px;overflow:auto;font:13px/1.5 SFMono-Regular,Consolas,monospace;white-space:pre-wrap}
+pre .lbl{color:#e2b6d4;font-weight:700}
+code{background:#efe7ed;padding:1px 5px;border-radius:4px;font:13px SFMono-Regular,Consolas,monospace;color:#5B2A4E}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--plum);color:#fff}
+tr:nth-child(even) td{background:#faf6f9}
+details{border:1px solid var(--line);border-radius:8px;margin:10px 0;background:#fff}
+details>summary{cursor:pointer;padding:12px 16px;font-weight:700;color:var(--plum)}
+details[open]>summary{border-bottom:1px solid var(--line)}
+.casebody{padding:6px 20px 18px;font-size:14px}
+.casebody h4{color:var(--plum);border-top:1px solid var(--line);padding-top:10px}
+.pill{display:inline-block;background:var(--plum);color:#fff;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:700;margin-right:6px}
+ul{margin:8px 0 8px 4px;padding-left:20px}li{margin:3px 0}
+.foot{margin-top:50px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12.5px}
+@media(max-width:820px){.wrap{grid-template-columns:1fr}nav{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line)}main{padding:22px}.ba{grid-template-columns:1fr}}
+</style></head><body>
+<div class="wrap">
+
+<nav>
+<div class="brand">Consulting Collective<small>Report Writing Course · SCLARC</small></div>
+<div class="sec">Foundations</div>
+<a href="#start">Start here</a>
+<a href="#lanterman">1 · The eligibility question</a>
+<a href="#voice">2 · Six voice principles</a>
+<a href="#structure">3 · The 18-section report</a>
+<div class="sec">Gathering the data</div>
+<a href="#intake">4 · Intake &amp; interview</a>
+<a href="#obs">5 · Observations &amp; tests</a>
+<div class="sec">Diagnosing</div>
+<a href="#dsm">6 · DSM-5-TR criteria sheets</a>
+<a href="#differential">7 · Trauma vs. ASD</a>
+<a href="#samples">8 · Writing samples</a>
+<div class="sec">AI &amp; templates</div>
+<a href="#ai">9 · AI prompts (Bastion)</a>
+<a href="#autismmap">Autism mapping template</a>
+<a href="#idmap">ID mapping template</a>
+<div class="sec">Finishing</div>
+<a href="#checklist">10 · Pre-submission QA</a>
+<a href="#boiler">Boilerplate</a>
+<a href="#cases">11 · Worked cases</a>
+</nav>
+
+<main>
+<header class="hero" id="start">
+<h1>SCLARC Report Writing</h1>
+<p>A step-by-step course for trainees &amp; training clients · Facilitated by Krystel Edmonds-Biglow, Psy.D.</p>
+</header>
+
+<div class="tldr"><b>What this course does.</b> It shows you how to write a Regional Center (SCLARC)
+psychological evaluation, from the first interview to the report you turn in. It covers how to write,
+how to organize the report, how to reason through the DSM-5-TR, how to use the Autism and Intellectual
+Disability templates, and it includes three de-identified sample reports. Read it in order the first
+time. After that, go straight to the part you need.</div>
+
+<div class="note"><b>How to use it.</b> Every section starts with the main point in one line. The reference
+sheets, templates, and checklist are here to keep open while you write. The AI prompts are for people
+using <b>Bastion</b>. If you use <b>Reverb</b>, it builds the mapping for you and you do not need the
+prompts. Whether you use AI or not, the templates are what you follow. <b>Check every fact against your
+own data, and proofread the whole report before you turn it in.</b></div>
+
+<h2 id="lanterman">1 · The report and the eligibility question</h2>
+<div class="tldr"><b>In short.</b> Every Regional Center report has one job: to answer one question clearly, in the Diagnostic Impressions section.</div>
+<p>Regional Centers hire licensed psychologists to decide whether an applicant has a qualifying
+developmental disability under California’s <b>Lanterman Act</b>. Your report needs to answer one question
+head-on: does the applicant have a qualifying condition (intellectual disability and/or autism spectrum
+disorder) that started before age 18, is likely to last, and gets in the way of daily life in a real way?
+The Regional Center makes the final eligibility decision, not you. Your job is to give their team
+everything they need to make it.</p>
+<p>The SCLARC eligibility team reads these reports. Applicants, families, attorneys, and courts may read
+them too. A report that does not meet SCLARC’s standards gets sent back (“kicked back”). This course is
+based on the SCLARC Standards for Psychological Evaluations, the DSM-5-TR, and the problems that show up
+most often in reports that get returned.</p>
+
+<h2 id="voice">2 · The six voice principles</h2>
+<div class="tldr"><b>In short.</b> Every paragraph in every report obeys six principles: <b>name, tense, show, teach, attribute, affirm.</b></div>
+<table><tr><th>Principle</th><th>What it means</th></tr>
+<tr><td><b>Name</b></td><td>Use the client’s name in every paragraph. The client isn’t at the eligibility meeting — the report is. Replace “the client” everywhere; this alone raises warmth.</td></tr>
+<tr><td><b>Tense</b></td><td>Present tense, active voice. “Lawrence demonstrates,” not “demonstrated.” Present tense keeps the reader with the person as they are today.</td></tr>
+<tr><td><b>Show</b></td><td>Show, don’t label. “Diego oriented toward the examiner but did not initiate joint attention” — not “Diego is socially awkward.” Specific behavior in specific context.</td></tr>
+<tr><td><b>Teach</b></td><td>Teach the measure, then report scores. Open each measure paragraph by naming what the measure is for; then the scores; then the interpretation.</td></tr>
+<tr><td><b>Attribute</b></td><td>Attribute the informant. Every reported behavior carries a source: (per maternal report on the ADI-R), (observed during ADOS-2 Task 4). A reviewer can trace evidence to its source.</td></tr>
+<tr><td><b>Affirm</b></td><td>Neurodiversity-affirming language. “Presents with,” “demonstrates,” “experiences” — not “suffers from.” Diagnoses direct treatment; they are not verdicts about the person.</td></tr>
+</table>
+
+<h2 id="structure">3 · The 18-section report</h2>
+<div class="tldr"><b>In short.</b> Every SCLARC report uses the same structure. Fill in the sections in this order.</div>
+<table><tr><th>#</th><th>Section</th><th>Purpose</th></tr>
+<tr><td>1</td><td>Header table</td><td>Name, DOB, dates of service, UCI, evaluator, supervisor, referring center, service coordinator.</td></tr>
+<tr><td>2</td><td>Referral information</td><td>One-paragraph orientation: who, what, why.</td></tr>
+<tr><td>3</td><td>Confidentiality / limits of consent</td><td>Standard confidentiality language and the report’s intended use.</td></tr>
+<tr><td>4</td><td>Chief concerns &amp; background</td><td>13 sub-sections: family, developmental, behavior, social communication, play, RRB/sensory, adaptive, psychiatric, trauma, educational, medical, legal, interventions.</td></tr>
+<tr><td>5</td><td>Behavioral observations</td><td>Present tense, name-forward, show-don’t-label; every observation traceable to a moment in session.</td></tr>
+<tr><td>6</td><td>Test results</td><td>Teaching paragraph before scores. Cognitive → Adaptive → ASD-specific → Behavior rating.</td></tr>
+<tr><td>7</td><td>Clinical supervision statement</td><td>Names the supervising licensed psychologist.</td></tr>
+<tr><td>8</td><td>AI technology disclosure</td><td>Discloses AI-assisted formatting; affirms clinician responsibility.</td></tr>
+<tr><td>9</td><td>Diagnostic impressions</td><td>DSM-5-TR criterion walk, each claim substantiated by in-room behavior.</td></tr>
+<tr><td>10</td><td>Differential considerations</td><td>Named alternatives ruled out.</td></tr>
+<tr><td>11</td><td>Summary &amp; clinical impressions</td><td>The integrative story.</td></tr>
+<tr><td>12</td><td>Recommendations</td><td>Service · provider · goal · frequency.</td></tr>
+<tr><td>13</td><td>Signature block</td><td>Evaluator + supervisor, credentials, signature images.</td></tr>
+<tr><td>14</td><td>References</td><td>APA 7th edition.</td></tr>
+<tr><td>15–17</td><td>Appendices</td><td>A: full test-data tables (page break before). B: rating-scale data. C: consent.</td></tr>
+<tr><td>18</td><td>Cover sheet</td><td>Final page, Consulting Collective letterhead.</td></tr>
+</table>
+
+<h2 id="intake">4 · Intake &amp; clinical interview</h2>
+<div class="tldr"><b>In short.</b> The more specific you get in the interview, the more specific your report can be. A thin interview leaves you with a thin report.</div>
+<h3>The 13 intake domains (Reverb)</h3>
+<ul>
+<li><b>1 Presenting concern</b> — what brings you in; a bad day vs. a good day; who else is worried; what’s been tried.</li>
+<li><b>2 Family &amp; developmental history</b> — pregnancy, delivery, early temperament; motor/language/social/play milestones with ages.</li>
+<li><b>3 Behavior</b> — walk through a typical meltdown start to finish; triggers; what helps recovery; repetitive behaviors.</li>
+<li><b>4 Social communication</b> — starting conversations, reading emotions, jokes/sarcasm, making and keeping friends.</li>
+<li><b>5 Play &amp; interests</b> — what they choose to play with; intense or fixated interests and how much of the day.</li>
+<li><b>6 RRB / sensory</b> — B1 stereotyped movements; B2 insistence on sameness; B3 restricted interests; B4 sensory reactivity.</li>
+<li><b>7 Adaptive</b> — daily living, self-care, community, executive function.</li>
+<li><b>8 Psychiatric history</b> — prior evaluations, therapy, medication, hospitalizations.</li>
+<li><b>9 Trauma &amp; adverse experiences</b> — ask for every client; central for foster-care/removed youth.</li>
+<li><b>10 Educational history</b> — every school, special-education services, performance, teacher observations.</li>
+<li><b>11 Medical</b> — conditions, medications, hearing/vision, neurological.</li>
+<li><b>12 Legal</b> — juvenile justice, custody, pending matters.</li>
+<li><b>13 Interventions to date</b> — named services, duration, provider, family’s perception of what helped.</li>
+</ul>
+<div class="note"><b>Three cross-setting probes</b> (these later substantiate cross-context stability): (1) Where is the behavior most, and least, intense? (2) Who must be present for it to happen, and who can make it stop? (3) Is it different when the caregiver changes — mom, dad, foster caregiver, teacher, grandparent?</div>
+<p>The full <b>SCLARC Clinical Interview Protocol</b> expands these into demographic data, living situation, circle of support, daily routine, fixated interests and their social impact, attachment to objects, impact across settings, accommodations, and the remaining SCLARC domains. Document with attention to discrepancies and corroboration across sources.</p>
+
+<h2 id="obs">5 · Behavioral observations &amp; test results</h2>
+<div class="tldr"><b>In short.</b> Observations put the reader in the room; test paragraphs teach the measure before the scores; the ADOS-2 write-up is the anchor of every ASD report.</div>
+
+<h3>Behavioral observations — before &amp; after</h3>
+<div class="ba">
+<div class="col before"><h5>Earlier draft</h5>“Lawrence was cooperative and quiet. Some difficulty with eye contact. Restricted affect.”</div>
+<div class="col after"><h5>Refined draft</h5>Lawrence arrived dressed neatly, hands in his pockets, and remained standing near the door for about thirty seconds before his foster mother gestured him toward the chair… His affect was constricted and did not shift meaningfully across content, even when the discussion turned to the death of his biological mother.</div>
+</div>
+<p><b>What made it better:</b> the name in every sentence, present tense, swapping “quiet” for the actual behavior, describing his affect by what did <i>not</i> change, and quoting the restricted interest as it happened.</p>
+
+<h3>The ADOS-2 deep dive</h3>
+<p>The ADOS-2 section is the heart of every autism report. If it is weak, the rest of the report cannot make up for it. Start with the required <b>teaching paragraph</b> that says what the measure does, then tie every score to the specific tasks where you saw the behavior.</p>
+<div class="note"><b>Teaching-paragraph template.</b> “The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2), Module [X], is a standardized, semi-structured observational assessment designed to elicit behaviors relevant to Autism Spectrum Disorder. It consists of [N] activities that provide opportunities to observe reciprocal social interaction, social communication, imaginative use of materials, and restricted or repetitive behaviors. Scores combine into Social Affect (SA) and Restricted and Repetitive Behavior (RRB) domain totals, yielding a calibrated severity score interpreted against DSM-5-TR ASD criteria, with attention to the pattern across tasks rather than any single item.”</div>
+<div class="ba">
+<div class="col before"><h5>Earlier draft</h5>“Diego’s Social Affect score fell in the High range. His RRB score fell in the High range.”</div>
+<div class="col after"><h5>Refined draft</h5>Diego’s Social Affect calibrated severity score fell in the High range, driven by limited spontaneous joint attention during Task 5 (Free Play), reduced modulation of facial expression during shared-enjoyment tasks (Tasks 3 and 6), and minimal gesture throughout. His RRB score fell in the High range, driven by sustained visual inspection of the toy vehicles during Task 5 and repetitive vocalizations during transitions.</div>
+</div>
+
+<h2 id="dsm">6 · DSM-5-TR criteria reference sheets</h2>
+<div class="tldr"><b>In short.</b> One reference per diagnosis. Confirm criteria while you write.</div>
+<details><summary>F84.0 — Autism Spectrum Disorder</summary><div class="casebody">
+<p><b>A</b> — Persistent deficits in social communication/interaction across contexts: A1 reciprocity · A2 nonverbal · A3 relationships (all three).<br>
+<b>B</b> — Restricted, repetitive patterns; at least 2 of 4: B1 stereotyped · B2 sameness · B3 restricted interests · B4 sensory.<br>
+<b>C</b> — Present in early developmental period. <b>D</b> — Clinically significant impairment. <b>E</b> — Not better explained by ID/GDD.<br>
+<b>Specifiers:</b> with/without intellectual impairment; with/without language impairment; associated medical/genetic condition; with/without catatonia. Severity Level 1–3 for each of A and B.</p></div></details>
+<details><summary>F70–F73 — Intellectual Disabilities</summary><div class="casebody">
+<p><b>A</b> — Deficits in intellectual functions, confirmed by clinical assessment <i>and</i> standardized testing. <b>B</b> — Deficits in adaptive functioning across settings (severity set by adaptive functioning, not IQ). <b>C</b> — Onset in the developmental period.<br>
+<b>Codes:</b> F70 Mild · F71 Moderate · F72 Severe · F73 Profound.</p></div></details>
+<details><summary>F88 / F89 — Other Specified / Unspecified NDD</summary><div class="casebody">
+<p><b>F88</b> — NDD features causing significant impairment but not meeting full criteria for a specific NDD; <i>specify the reason</i> (name what is present, what threshold isn’t met, why F88).<br>
+<b>F89</b> — Same, but the clinician chooses <i>not</i> to specify — usually because information is insufficient or confounders preclude it. The formulation must name the confounders.</p></div></details>
+<details><summary>F90.x — ADHD · F43.10/F43.9 — Trauma · F94.1/F94.2 — Attachment · F32.9 — Depressive</summary><div class="casebody">
+<p><b>F90.x ADHD:</b> A1 inattention (6+/5+ if 17+) ≥6 mo; A2 hyperactivity-impulsivity (6+/5+) ≥6 mo; B before age 12; C in ≥2 settings; D interference; E not better explained. Codes .0 inattentive · .1 hyperactive-impulsive · .2 combined.<br>
+<b>F43.10 PTSD:</b> exposure + intrusion + avoidance + negative cognition/mood + arousal, ≥1 month. <b>F43.9</b> unspecified trauma/stressor.<br>
+<b>F94.1 RAD</b> (inhibited/withdrawn) · <b>F94.2 DSED</b> (disinhibited approach).<br>
+<b>F32.9</b> unspecified depressive — name symptoms, impairment, and why unspecified.</p></div></details>
+
+<h2 id="differential">7 · Trauma vs. ASD — foster-care differential</h2>
+<div class="tldr"><b>In short.</b> When ASD-looking features appear in a trauma-exposed client, substantiate the diagnosis <b>above and beyond</b> the trauma. Four discriminators.</div>
+<p>Every child who has been removed from home or is in foster care has been through trauma. So if you diagnose autism, your report has to show that the autism is there on top of the trauma, not just a reaction to it. And if you considered autism but did not diagnose it, the report has to say why. Either way, the Differential Considerations part is the first thing the Regional Center reader turns to.</p>
+<table><tr><th>Discriminator</th><th>ASD points…</th><th>Trauma points…</th></tr>
+<tr><td><b>(a) Developmental origin</b> (Criterion C)</td><td>Features present <i>before</i> the identifiable trauma; anchored to ADI-R Age of Onset, Early Start, or pre-removal records.</td><td>Onset named <i>after</i> an identifiable stressor.</td></tr>
+<tr><td><b>(b) Cross-context stability</b></td><td>Same intensity across all settings and caregivers, stable across affective loading.</td><td>Intensifies in trauma-associated contexts, reduces in safe ones.</td></tr>
+<tr><td><b>(c) Nature of the interest</b></td><td>Intrinsic, pattern-based (trains, cataloguing, spinning, numeric sequencing).</td><td>Identity- or safety-organized (family exposure, threat-associated content).</td></tr>
+<tr><td><b>(d) Response to safety / time-course</b></td><td>Features persist across months/years in stable placement.</td><td>Hypervigilance, startle, constricted affect reduce with felt safety over time.</td></tr>
+</table>
+<div class="note"><b>How to write the verdict.</b> Say whether F84.0 is met, not met, or deferred, and go through all four discriminators one by one, pointing to what this client’s own data shows for each. Write it so anyone reading later can follow your reasoning. If the person who gave the history did not see the client’s early years, <b>say so plainly in the report</b>, and note that Criterion C cannot rest on that ADI-R.</div>
+
+<h2 id="samples">8 · Diagnostic-impression writing samples</h2>
+<div class="tldr"><b>In short.</b> One paragraph exemplar per diagnosis. Start here, then adapt to your client’s data.</div>
+<details><summary>F84.0 Autism (child) · F84.0 (adult, sub-threshold ADOS) · F88 · F89</summary><div class="casebody">
+<p><b>F84.0 child.</b> The client meets DSM-5-TR criteria for F84.0 Autism Spectrum Disorder, [Level], with accompanying [ID/language] impairment. Criterion A is met: [A1 reciprocity], [A2 nonverbal], [A3 relationships]. Criterion B is met with [≥2 of 4 sub-criteria named with behavior]. Criterion C is anchored to the ADI-R Age of Onset above cutoff and [caregiver] first-year concerns. Criterion D is met per ABAS-3 GAC = [X]. Criterion E is met — [cognitive descriptor]; ASD features exceed what would be expected at this cognitive level.</p>
+<p><b>F84.0 adult, masked.</b> …The ADOS-2 Module 4 total fell below the Autism Spectrum cutoff; this is reconciled via documented Module-4 limitations for adult masked presentations (Livingston et al., 2019), the specific sub-threshold pattern consistent with masking, and a caregiver-informant ADI-R above the developmental cutoff on all three domains.</p>
+<p><b>F88.</b> …best captured under F88 Other Specified NDD, reflecting features that exceed typical development but do not fully meet ASD criteria [name what’s present, what threshold isn’t met].</p>
+<p><b>F89.</b> …cannot be reliably specified given documented confounders: [cultural, linguistic, placement, trauma, interrupted schooling]. F70 was considered and not diagnosed for [reasoning]. F89 more accurately captures the impairment without over-specifying etiology the data cannot support.</p></div></details>
+<details><summary>F70 ID · F90.2 ADHD · F43.9 Trauma · F32.9 Depressive</summary><div class="casebody">
+<p><b>F70.</b> Criterion A by [cognitive measure/score]; Criterion B by [ABAS-3/Vineland composite + domains]; Criterion C anchored to [ADI-R Age of Onset or developmental history].</p>
+<p><b>F90.2.</b> Inattentive symptoms [named with sources]; hyperactive-impulsive symptoms [named with sources]; documented in ≥2 settings, before age 12 per [source], with functional impact in [domains].</p>
+<p><b>F43.9.</b> Exposure via [named events + sources]; impairment via [affect modulation, sleep, hypervigilance, intrusion/avoidance]; F43.10 PTSD considered and [met/not met] for [criterion-based reasoning].</p>
+<p><b>F32.9.</b> Symptoms [constricted affect, reduced initiation, anhedonia, sources]; impairment across [settings]; MDD [considered but not diagnosed / diagnosed] for [reasoning].</p></div></details>
+
+<h2 id="ai">9 · Using AI (Bastion) — prompts, mapping &amp; accuracy</h2>
+<div class="warn"><b>Read this first.</b> AI can help you draft and format. It is not the clinician and it never makes the clinical decisions. If you use <b>Bastion</b>, the prompts below build your criterion map. <b>If you use Reverb, it builds the map for you and you do not need these prompts.</b> Either way, the templates in this section are what you follow. The AI will <b>not</b> write “Met” or “Not Met” for you; you add that yourself. <b>Check every score, quote, and fact against your own data, and proofread the whole report before it goes to your supervisor.</b></div>
+<h3>The three-step Bastion workflow</h3>
+<ul>
+<li><b>Step 1 — Integrative summary.</b> Paste your report draft (background + test data), then the integrative-summary prompt. The AI returns a one-paragraph summary of how the client meets criteria, with scores.</li>
+<li><b>Step 2 — Code + specifiers.</b> Ask the AI to write the DSM-5-TR code with the correct specifiers for your client.</li>
+<li><b>Step 3 — Build the map.</b> Paste the mapping template (below) and your report draft; the AI returns the full criterion map for your client. Then you add “Met / Not Met” under each criterion and check every line.</li>
+</ul>
+<pre><span class="lbl">AI PROMPT — Integrative summary</span>
+In one paragraph, write an integrative summary of how [CLIENT] meets criteria for a
+diagnosis of Autism based on the information provided. Include test score data.
+(Paste the report draft, including background and test data, after the prompt.)
+
+<span class="lbl">AI PROMPT — Code + specifiers</span>
+Write out the DSM-5-TR code and include specifiers for [CLIENT]:
+Autism Level [X] Social Communication, Level [X] Restricted and Repetitive Behavior,
+with/without cognitive impairment, with/without language impairment, [genetic condition],
+and any additional diagnosis.
+
+<span class="lbl">AI PROMPT — Build the criterion map</span>
+Update the Autism mapping with the new name and additional information provided. Keep the
+same format. Include all Autism Criteria. (Paste the mapping template below into the chat,
+then paste the report draft with the test data into the same chat.)</pre>
+
+<h3 id="autismmap">Autism criterion mapping &amp; coding template</h3>
+<p>This is the format the map should follow. Add <b>Met</b> or <b>Not Met</b> under each criterion (the AI will not).</p>
+<pre><span class="lbl">F84.0 (299.00) Autism Spectrum Disorder</span>
+- Severity — Social Communication: Level [1/2/3]
+- Severity — Restricted, Repetitive Behaviors: Level [1/2/3]
+- Specifiers:
+   - With/without accompanying intellectual impairment ([Nonverbal IQ], [ABAS-3 GAC])
+   - With/without accompanying language impairment ([evidence])
+   - Associated / not associated with a known medical or genetic condition
+   - With / without catatonia
+
+Criterion A — Persistent deficits in social communication &amp; interaction  [MET/NOT MET]
+   A1 Social-emotional reciprocity — DSM description → [client presentation + sources]
+   A2 Nonverbal communication — DSM description → [client presentation + sources]
+   A3 Developing/maintaining relationships — DSM description → [client presentation + sources]
+Criterion B — Restricted, repetitive patterns (≥2 of 4)  [MET/NOT MET]
+   B1 Stereotyped/repetitive motor, objects, or speech → [presentation]
+   B2 Insistence on sameness / routines → [presentation]
+   B3 Highly restricted, fixated interests → [presentation]
+   B4 Hyper-/hyporeactivity to sensory input → [presentation]
+Criterion C — Present in the early developmental period  [MET/NOT MET] → [onset evidence]
+Criterion D — Clinically significant impairment  [MET/NOT MET] → [adaptive/functional evidence]
+Criterion E — Not better explained by ID/GDD  [MET/NOT MET] → [reasoning vs. cognitive level]</pre>
+
+<h3 id="idmap">Intellectual Disability mapping &amp; coding template</h3>
+<pre><span class="lbl">F7[0/1/2/3] (31[8/9].x) [Mild/Moderate/Severe/Profound] Intellectual Disability</span>
+- Specifiers (severity set by ADAPTIVE functioning, not IQ):
+   - Conceptual Domain: [Mild/Moderate/Severe] deficits ([ABAS-3 Conceptual score, evidence])
+   - Social Domain: [level] deficits ([ABAS-3 Social score, evidence])
+   - Practical Domain: [level] deficits ([ABAS-3 Practical score, evidence])
+
+Criterion A — Deficits in intellectual functions
+   → [IQ measure + index/subtests: reasoning, planning, visual processing, academic learning]
+Criterion B — Deficits in adaptive functioning
+   Conceptual → [ABAS-3 Conceptual SS + language/academic evidence]
+   Social → [ABAS-3 Social SS + interpersonal evidence]
+   Practical → [ABAS-3 Practical SS + ADL/self-care/safety evidence]
+Criterion C — Onset during the developmental period
+   → [early developmental evaluations/records establishing continuity]</pre>
+<div class="note"><b>Integrative-summary samples</b> for both Autism and ID (the “Gavin” exemplars) are included in your Autism and Intellectual Disability write-up sample files. Use them as the model paragraph; keep the score data, and replace names and specifics with your client’s.</div>
+
+<h2 id="checklist">10 · Pre-submission QA checklist</h2>
+<div class="tldr"><b>In short.</b> 15 minutes on every report before it goes to Dr. Edmonds-Biglow. Catches ~90% of what would come back.</div>
+<table><tr><th>Area</th><th>Check</th></tr>
+<tr><td>Structure</td><td>All 18 sections present · Supervision + AI Disclosure both included · page break before Test Data appendix · cover sheet on final page.</td></tr>
+<tr><td>Voice</td><td>Client’s name throughout (no “the client”) · every measure paragraph teaches first, then scores · show-don’t-label on Observations and Social Communication · present tense, active voice.</td></tr>
+<tr><td>Diagnostic</td><td>Every DSM criterion addressed with specific in-room behavior · Differential Considerations with named rule-outs · F88/F89 rationale explained when used · recommendations tied to findings.</td></tr>
+<tr><td>Formatting</td><td>Times New Roman 12pt body and tables · header table complete · signature images embedded · footer with client name and page number.</td></tr>
+</table>
+
+<h2 id="boiler">Boilerplate — supervision, AI disclosure, recommendations</h2>
+<details><summary>Supervision statement</summary><div class="casebody"><p>This evaluation was conducted under the direct clinical supervision of Krystel Edmonds-Biglow, Psy.D. (License #: Psy19260), Licensed Psychologist. All aspects of assessment, interpretation, diagnostic formulation, and report preparation were reviewed and approved by Dr. Edmonds-Biglow prior to release.</p></div></details>
+<details><summary>Technology (AI) use disclosure</summary><div class="casebody"><p>Portions of this report were formatted with the assistance of technology-based tools. All clinical judgment, diagnostic reasoning, interpretation of test data, and treatment planning were conducted by the licensed evaluator. The evaluator has reviewed and takes full professional responsibility for all content. Any AI recording or transcription technology used is HIPAA-compliant.</p></div></details>
+<details><summary>Standard recommendations &amp; family accommodations</summary><div class="casebody">
+<p><b>Recommendations (adapt to client):</b> (1) behavioral or trauma-focused therapy at diagnosis-appropriate intensity, targeting named criterion findings; (2) speech-language therapy when indicated; (3) occupational therapy for sensory/adaptive skills when indicated; (4) family training and psychoeducation; (5) care coordination across providers; (6) Regional Center service coordination through SCLARC; (7) follow-up reassessment as indicated.</p>
+<p><b>Family accommodations:</b> provider language match; cultural-humility training for out-of-community providers; family engagement in intervention planning; written materials in the caregiver’s preferred language; trauma-informed and neurodiversity-affirming framework.</p></div></details>
+
+<h2 id="cases">11 · Worked example reports (de-identified)</h2>
+<div class="warn"><b>Privacy.</b> These three examples are de-identified for internal training. Names are replaced with Case #1–#3 and direct identifiers (date of birth, record numbers, coordinator and provider names, specific facilities) are redacted. Confirm de-identification before any external sharing.</div>
+<details><summary><span class="pill">Case #1</span> Adult evaluation — ASD / ID rule-out</summary><div class="casebody"><p>Consulting Collective</p>
+<p>3838 W. Carson Street Suite 360</p>
+<p>Torrance, CA 90503</p>
+<h4>PSYCHOLOGICAL EVALUATION</h4>
+<p>Name:                       Case #1 --------------------------- -------------------------------- Date of Birth:              [redacted] Date of Evaluation:         04/02/2026, 04/07/2026 UCI:                        [redacted] Evaluator:                  Krystel Edmonds-Biglow, Psy.D. Name of Referring Agency:   the Regional Center Service Coordinator:        [redacted]</p>
+<h4>Confidentiality/Limits of Informed Consent:</h4>
+<p>Please be advised that this report contains information of a confidential nature that should not be released without informed consent. It includes psychological findings and test interpretations that are best understood with the assistance and guidance of a licensed psychologist. This report is prepared specifically for the Regional Center and its intended use therein.</p>
+<p>This evaluation attempts to diagnose for the presence or absence of developmental delays which may be attributed to intellectual disability and/or autism spectrum disorder. This is not a comprehensive psychodiagnostic evaluation. Regional Center eligibility is determined by the Regional Center and not by this psychologist.</p>
+<h4>Chief Concerns and Relevant Background:</h4>
+<p>Case #1 is a 56 years and 1 months female referred by their service coordinator from the the Regional Center to rule out a developmental delay and autism spectrum disorder.</p>
+<p>Case #1 was referred for a psychological evaluation with the Regional Center following a recent diagnosis of Autism Spectrum Disorder at her health plan. Her therapist and psychiatrist expressed concerns about her significant difficulties with daily functioning. Case #1 and her aunt both reported challenges with self-care, including cooking, grooming, and maintaining personal hygiene. Her aunt, who lives out of state, worries about Case #1’s ability to manage basic needs, such as having enough food and keeping herself clean. Case #1 is able to make simple meals like sandwiches and use the microwave, but she does not know how to cook more complex foods or wash herself without assistance. She often needs help with bathing and sometimes with dressing.</p>
+<p>Case #1 has a long history of difficulty with social interaction. She struggles to engage in reciprocal conversations and often perseverates on topics and going off-topic during discussions. She does not like to start conversations and has inconsistent eye contact. Case #1 has reported sensory sensitivities, especially to loud noises, and prefers the comfort of being wrapped tightly. Case #1 also displays repetitive physical behaviors, such as hand flapping and rocking back and forth when excited. She has a history of self-injurious behaviors, including banging her head and hitting her face when dysregulated as a child, and she continues to feel the impulse to hit her face when frustrated.</p>
+<p>Her aunt expressed concern about Case #1’s ability to live independently, given her history of homelessness and ongoing struggles with daily living skills. Case #1 has also reported that people have called her “crazy,” including previous employers, and that she was often told to “sit down” and “keep still” when she was younger. She has difficulty expressing her thoughts clearly and is often told to speak like an adult. These ongoing challenges with communication, social interaction, and self-care are the main reasons for her current assessment.</p>
+<p>Developmental History</p>
+<p>There is limited information available about Case #1’s early development. Her aunt reported that Case #1’s mother had a normal, healthy pregnancy at age 25. Case #1 was born at approximately 10 pounds and was discharged home without complications. There is no specific information about when she sat unassisted, crawled, or said her first words. According to her aunt, Case #1 walked independently at 11 months. She was toilet trained, but the exact age is unknown. Case #1 stopped talking around age three after experiencing a significant loss. There is no additional information about her developmental milestones or early childhood development.</p>
+<p>Family History of Developmental Disorder/Mental Health Problems</p>
+<p>Case #1 currently lives alone. She was born in Illinois and moved to California at age 26. Her parents separated before she was born. Her mother suffered from severe mental illness and exposed Case #1 and her siblings to dangerous situations. When Case #1 was under a year old, her father took her in and raised her. Her father was 63 years old at the time of her birth and worked as a minister. He was described as “strict”. Case #1 lived with her father and his partner until she was about three years old, when the partner passed away. Her father later remarried when Case #1 was around eight years old. They remained married until he passed away when Case #1 was 18. Her stepmother had health challenges that prevented her from being an ongoing source of support.</p>
+<p>After the loss of her caregiver at age three, Case #1 became mute. She became close to the extended family of her first stepmother. However, her father cut off communication with her stepmother’s family because he believed Case #1’s attachment to them would cause problems. From age three to eighteen, Case #1 had no contact with her stepmother’s side of the family. After her father died when she was eighteen, she reconnected with them and they continue to provide support even though they live in Illinois.</p>
+<p>Case #1 reported having older siblings on both her mother’s and father’s sides. She had some interaction with her mother’s children and their children, and she was especially close to a nephew who has since passed away. She has also had some contact with her biological mother.</p>
+<p>Medical</p>
+<p>Case #1 has a history of both physical and mental health concerns. She has been diagnosed with Type 2 diabetes, obesity, chronic knee, shoulder, and back pain, bone spurs on her knees and heels, chronic menstrual bleeding, iron deficiency, asthma, high potassium, chronic urinary tract infections, Long COVID, and sleep apnea. She wears glasses for nearsightedness and uses prescription medication for dry eyes. Case #1 is allergic to fish but has no known medicinal allergies.</p>
+<p>She fell at home and required surgery to repair her Achilles tendon. She has also had surgery on her ACL in 2021 and was hospitalized for a few days before being transferred to a rehabilitation center. During her stay, she developed COVID-19 and was readmitted to the hospital for treatment of COVID and asthma. She recently had an ablation surgery due to frequent menstrual bleeding. Case #1 receives cortisone injections in her knees and uses a walker due to chronic knee pain. She receives physical therapy at home through home health services.</p>
+<p>Case #1’s mental health services began after a work-related trauma. She was initially diagnosed with PTSD, and later received additional diagnoses, including Autism Spectrum Disorder, anxiety, depression, panic disorder, and ADHD. She takes several medications for her physical and mental health conditions, including Wegovy, Zoloft, Ritalin, Topamax, Albuterol, Singular, Flexerol, Seroquel, Prilosec, Adderall, Gabapentin, Striverdi Respimat, Latuda, potassium, Motrin, Lasix, D-Mannose, Azo cranberry, and magnesium glycinate. She uses a sleep apnea machine at night.</p>
+<p>Case #1 receives regular medical and dental care, and her immunizations are up to date. She has Medi-Cal and Medicare insurance coverage.</p>
+<p>Educational History</p>
+<p>Case #1 completed high school without any intervention or supportive services. She performed well in reading on state testing, but her math scores were lower. After high school, she enrolled herself in Long Beach a local community college. During her time in college, she needed more time to complete tests. In one class, a professor noticed that she was taking a long time to finish a final exam and suggested that she get evaluated at the disability office. Case #1 followed this recommendation and was made eligible for accommodation after being assessed in the Learning Disability Lab, where they determined that she had a learning disability. She did not complete her degree at a local community college. Case #1 reported that people made fun of her when she raised her hand and answered questions in class.</p>
+<p>History of Interventions/Services</p>
+<p>Case #1 has received years of psychotherapy, beginning in 2009. She is currently receiving mental health services through her health plan, with Dr. her therapist as her therapist and her psychiatrist as her psychiatrist. Her current diagnoses include anxiety, depression, panic disorder, ADHD, Autism Spectrum Disorder, and chronic PTSD. Case #1 takes several prescribed medications, including Zoloft for depression and anxiety, Ritalin and Adderall for ADHD, Topamax for chronic pain, and Seroquel and Latuda for mental health symptoms. She also receives regular medical and dental care and has access to home health services, including physical therapy.</p>
+<h4>Prior Assessments:</h4>
+<p>On 2/25/2025, a prior evaluating psychologist conducted a psychological assessment of Case #1 L [surname], a 54-year-old female, to determine if she met criteria for Autism Spectrum Disorder. The evaluation, which included a telephone interview due to multiple factors, incorporated background history, clinical interviews, and the ADOS-2 protocol as a guideline, though not all components could be administered in person. Case #1 reported lifelong social difficulties beginning in childhood, including being misunderstood by peers and adults, receiving negative feedback for her communication style, and preferring solitude. She described a strong need for certainty, frequent clarifying questions, and a tendency to be verbose and tangential, which often led to misunderstandings and social isolation. Behavioral observations noted her articulate and detailed speech, occasional modulation of voice to express emotion, and difficulty refraining from interrupting. Functionally, she reported significant disorganization, avoidance of visitors, unemployment, and uncertainty about returning to work due to health issues. The assessment found evidence of persistent deficits in social communication and interaction, as well as restricted, repetitive patterns of behavior, such as stereotyped speech and insistence on routines, consistent with DSM-5 criteria for Autism Spectrum Disorder. Additional diagnoses included chronic posttraumatic stress disorder, panic disorder, unspecified ADHD, and moderate recurrent major depressive disorder. Recommendations included ongoing medication management, continued psychotherapy, and consideration of pursuing an ideal work environment as her condition improved. The report also noted struggles in self-care, language, learning, mobility, independent living, and self-direction.</p>
+<h4>Test(s) Administered:</h4>
+<p>Wechsler Adult Intelligence Scale - 5th Edition (WAIS-5) Adaptive Behavior Assessment System, 3rd Edition (ABAS-3) Social Responsiveness Scale, 2nd Edition (SRS-2) Autism Diagnostic Observation System, 2nd Edition (ADOS-2-MOD-4): Module 4</p>
+<h4>Behavioral Observations:</h4>
+<p>Case #1 is a 56-year-old African American female of average height and above average weight. She was dressed appropriately in a pink casual short set. The evaluation took place in her living room due to her mobility limitations from a leg and knee injury. The environment was quiet and free from distractions. Throughout the session, Case #1 was cooperative and attentive. She listened carefully to instructions and made an effort to answer questions to the best of her ability, even when topics were uncomfortable for her.</p>
+<p>In terms of social interaction, Case #1 was polite and welcoming. She greeted the evaluator warmly and made efforts to ensure the evaluator was comfortable during the appointment. While she allowed the evaluator to ask follow-up questions and express thoughts, she did not initiate reciprocal conversation or ask questions in return. Her interactions were generally kind, but the conversation was mostly one-sided, with Case #1 sharing her own experiences and stories rather than engaging in mutual dialogue.</p>
+<p>Case #1 communicated in complete sentences and was able to express her thoughts clearly. At the start of the session and during cognitive testing, her voice was noticeably high-pitched, which she described as sounding like a “baby voice”. This higher pitch appeared to be related to social anxiety. When discussing her background and life experiences, her voice became deeper and more relaxed. She shared many stories about her life and family, often focusing on events and her thoughts. She rarely commented on the emotional experiences of others and only occasionally shared her own feelings.</p>
+<p>Repetitive behaviors and sensory-seeking tendencies were observed throughout the evaluation. Case #1 frequently rubbed a soft blanket between her fingers and kept it on her lap despite the warm temperature. She was also observed to bounce her leg, rock, and verbally repeat certain phrases, especially when discussing stressful work experiences or difficult social interactions. Additionally, she demonstrated some rigidity, such as refusing to discuss her age and perseverating on past negative experiences.</p>
+<h4>Test Results:</h4>
+<p>The use of standardized assessment measurements should not be employed as the sole criteria in developing a treatment plan or in the placement of an individual. Interpretive caution should be exercised. Under the circumstances, such measures should not be considered as indicators of future performance or natural endowment. They can however, be a valid indicator of current adjustment and skills. Particular caution must be exercised in interpreting these results due to ethnic and cultural opportunity.</p>
+<h4>Cognitive:</h4>
+<p>Case #1 was administered the Wechsler Adult Intelligence Scale - 5th Edition (WAIS-5), a comprehensive measure of intellectual functioning that evaluates cognitive abilities across multiple domains. The WAIS-5 assesses verbal comprehension, which involves understanding and using language effectively; fluid reasoning, which measures the ability to solve novel problems and think logically; working memory, which involves holding and manipulating information in mind; and processing speed, which evaluates how quickly and accurately routine cognitive tasks can be completed. Her Full Scale IQ score was 83 (WAIS-5, Full Scale IQ, 13th percentile), indicating low average intellectual functioning.</p>
+<p>Her cognitive profile reveals notable strengths in fluid reasoning abilities (WAIS-5, Fluid Reasoning, 63rd percentile). She demonstrated particularly strong performance on Matrix Reasoning (84th percentile), which requires identifying patterns and relationships in visual information. This indicates she can effectively analyze visual-spatial information and apply logical reasoning to solve novel problems. Her performance on Figure Weights was average (37th percentile), while Block Design showed average functioning (25th percentile), suggesting consistent abilities in visual-perceptual reasoning tasks that do not rely heavily on verbal skills.</p>
+<p>Significant weaknesses emerged in verbal comprehension abilities (WAIS-5, Verbal Comprehension, 5th percentile). Her performance on Similarities was below average (5th percentile), indicating difficulty identifying relationships between concepts and abstract thinking involving verbal material. Vocabulary skills were in the low average range (9th percentile), suggesting limited word knowledge and verbal concept formation. Processing speed also presented challenges, with Coding performance falling below average (5th percentile), indicating slower visual-motor processing and attention to detail. Working memory showed mixed results, with Digit Sequencing in the low average range (16th percentile) while Digits Forward was average (50th percentile), suggesting some variability in her ability to manipulate information in working memory.</p>
+<h4>Adaptive Functioning:</h4>
+<p>The Adaptive Behavior Assessment System, Third Edition (ABAS-3), is a tool designed to evaluate how well an individual manages daily life demands across a variety of settings. It measures adaptive functioning in conceptual, social, and practical domains, providing insight into how a person communicates, interacts with others, and handles everyday tasks. Case #1’s aunt served as the informant.</p>
+<p>Case #1’s general adaptive functioning is significantly below what is typically expected for her age, as reflected by her performance at the lowest percentile in the General Adaptive Composite (ABAS-3, General Adaptive Composite, below 1st percentile). This indicates that she experiences pervasive challenges across most areas of daily living, including communication, socialization, and practical skills.</p>
+<p>In the conceptual domain, which covers skills such as communication, academics, and self-direction, she demonstrates marked difficulties. Her abilities in understanding and using language, as well as in making decisions and following through with tasks, are lower than 99% of her peers (ABAS-3, Conceptual, 1st percentile). While her basic academic skills are somewhat stronger, with performance better than 37% of her peers (ABAS-3, Functional Academics, 37th percentile), her abilities in other conceptual areas such as communication and self-direction remain severely limited.</p>
+<p>Her social functioning is also significantly affected. She has major challenges in forming relationships, understanding social cues, and engaging in age-appropriate social interactions, with performance below the 1st percentile compared to others her age (ABAS-3, Social, below 1st percentile). This suggests that she struggles to connect with others and may have difficulty participating in group activities or maintaining friendships.</p>
+<p>In the practical domain, which includes self-care, home living, health and safety, and community use, she faces substantial difficulties. Her ability to manage personal care tasks, perform household responsibilities, and function independently in community settings is well below what is expected for her age (ABAS-3, Practical, below 1st percentile). These challenges indicate a need for significant support in daily routines and safety awareness.</p>
+<h4>Autism Measures:</h4>
+<p>The ADOS-2 Module 4 is a standardized, semi-structured assessment designed to measure how an individual communicates, interacts socially, and displays repetitive behaviors. The assessment uses a variety of activities and questions to observe how Case #1 speaks, uses gestures, makes eye contact, and responds to social situations. It also examines behaviors often seen in autism, such as repeating actions or having intense interests in specific topics. The examiner observes and rates Case #1’s responses in each area to help describe her strengths and challenges.</p>
+<p>Case #1 spoke in complete sentences and demonstrated some complex language. However, her speech was noticeably unusual, with odd intonation and. She did not echo the examiner’s speech, but she frequently discussed the same topics. She volunteered information about her thoughts several times without prompting. Case #1 did not discuss her feelings as much. When the examiner discussed thoughts or feelings, Case #1 responded appropriately, but she did not ask about the examiner’s feelings in return. She could describe a routine event reasonably well, though she sometimes needed extra prompting to do so. There was limited back-and-forth conversation; Case #1 often followed her own ideas instead of engaging in a true exchange. She used some descriptive gestures, but these were limited to certain topics.</p>
+<p>During the assessment, Case #1’s eye contact was poorly regulated and did not help initiate or end social interactions. She occasionally directed facial expressions toward the examiner, but the range of expressions was limited. When speaking, her gestures, gaze, and facial expressions were less frequent or less varied than expected, or she relied heavily on one form of communication over others. She described experiencing several emotions, but her ability to express these feelings was restricted. She did not demonstrate much understanding of other people’s emotions. Case #1 showed some awareness of one typical social relationship, but not of her own role within it. She gave at least one clear indication of being responsible for her actions, but this was inconsistent. She made some efforts to gain or maintain the examiner’s attention, usually related to her own interests. Her responses to social prompts were somewhat limited, awkward, or inconsistent. Most of her communication focused on answering questions, or discussing her own interests, with little social conversation. The interaction was sometimes comfortable, but it was not consistent and occasionally seemed mechanical or slightly unusual.</p>
+<p>Case #1 displayed clear hand and finger mannerisms, such as twisting her blanket, as well as rocking and bouncing her leg. She had very specific interests and exhibited some rigid behaviors.</p>
+<h4>SRS-2</h4>
+<p>Case #1’s performance on the Social Responsiveness Scale, 2nd Edition (SRS-2) reveals a pattern of social functioning difficulties across multiple domains. The SRS-2 is a standardized measure that assesses various aspects of social behavior and autism-related characteristics, with higher T scores indicating greater difficulties. Her total score of 69 falls within the clinically significant range, suggesting notable challenges in social functioning that warrant attention and potential intervention.</p>
+<p>Examination of the social-related subscales reveals varying degrees of difficulty. Her Social Awareness score of 58 indicates relatively intact abilities to notice and attend to social cues in her environment. However, her Social Cognition performance (SRS-2, Social Cognition, 62nd percentile) shows mild elevation, suggesting some challenges in interpreting and understanding the meaning of social situations and behaviors. More significantly, her Social Communication score (SRS-2, Social Communication, 68th percentile) indicates notable difficulties with verbal and nonverbal communication skills necessary for social interaction. Her Social Motivation score (SRS-2, Social Motivation, 79th percentile) represents the most elevated area, reflecting substantial challenges with interest in and motivation for social engagement and relationships. The combined Social Communication and Interaction score (SRS-2, Social Communication and Interaction, 69th percentile) further confirms these interpersonal difficulties.</p>
+<p>Case #1&#x27;s performance on the Restricted Interests and Repetitive Behavior subscale (SRS-2, Restricted Interests and Repetitive Behavior, 65th percentile) indicates moderate elevation in this domain. This suggests she may demonstrate some degree of inflexible or repetitive behaviors, intense preoccupations with specific topics or activities, or difficulty adapting to changes in routine. These characteristics can impact her social interactions by creating barriers to flexible social engagement and shared interests with peers.</p>
+<p>Based on parent report, observations, and standardized test data, the most appropriate diagnostic classifications are as follows:</p>
+<p>F84.0 Autism Spectrum Disorder</p>
+<p>Without intellectual impairment</p>
+<p>Unknown accompanying language impairment</p>
+<p>Not associated with a known genetic or medical condition or environmental factor</p>
+<p>Associated with Attention Deficit Hyperactivity Disorder</p>
+<p>Severity: Social communication: Level 2 – “Requiring Substantial Support”</p>
+<p>Restricted, repetitive behaviors: Level 2 – “Requiring Substantial Support.”</p>
+<p>F90.9 Unspecified attention-deficit/hyperactivity disorder F43.8 Other specified trauma- and stressor-related disorder</p>
+<h4>Summary and Clinical Impressions:</h4>
+<p>Case #1’s symptoms reflect a complex interplay of cognitive, adaptive, and social challenges that are consistent with her diagnoses of Autism Spectrum Disorder, Unspecified Attention-Deficit/Hyperactivity Disorder, and Other Specified Trauma- and Stressor-Related Disorder. Her cognitive assessment shows a clear pattern: she has relative strengths in nonverbal reasoning and pattern recognition, as seen in her high performance on tasks like Matrix Reasoning, but she struggles with verbal comprehension and processing speed. These weaknesses are evident in her low scores on tasks that require understanding and expressing complex verbal ideas, holding information in mind, and quickly processing visual details. This cognitive profile helps explain her long-standing difficulties with communication, following conversations, and responding quickly in social or work situations.</p>
+<p>Her adaptive functioning is significantly impaired across all domains. She scores below the 1st percentile in general adaptive skills, with marked deficits in conceptual, social, and practical areas. She has trouble with self-care, such as cooking, grooming, and maintaining hygiene, and needs help with many daily tasks. Her social functioning is also severely limited, with major challenges in forming relationships, understanding social cues, and participating in age-appropriate interactions. These difficulties are not only reported by her and her family but are also observed during assessment, where she struggles with reciprocal conversation, maintains poor eye contact, and displays awkward or limited emotional expressions. Her social motivation is low, and she often avoids social situations due to anxiety and past negative experiences.</p>
+<p>The assessment also highlights the impact of her trauma history and ongoing mental health symptoms. She has experienced significant early life stress, including the loss of caregivers, emotional abuse, and periods of mutism following trauma. These experiences have contributed to her current difficulties with emotional regulation, self-injurious behaviors, and heightened anxiety in social situations. Her psychiatric history is complex, with multiple diagnoses and a long list of medications, reflecting the chronic nature of her mental health needs.</p>
+<p>Her daily functioning is further complicated by multiple medical conditions, chronic pain, and mobility limitations, which require ongoing physical therapy and support from home health services. She relies on others for many aspects of daily living and is unable to live independently without significant assistance. Her history of employment difficulties, including workplace mistreatment and slow processing speed, led to her leaving the workforce and seeking mental health support.</p>
+<p>Case #1’s presentation is shaped by the interaction of her neurodevelopmental, psychiatric, and medical conditions. Her cognitive strengths in nonverbal reasoning provide some capacity for problem-solving, but her significant adaptive and social deficits, combined with trauma-related symptoms and physical health problems, create a high level of functional impairment. She requires ongoing support for daily living, social engagement, and emotional regulation. Treatment should focus on building adaptive skills, supporting social communication, addressing trauma and anxiety, and coordinating care for her medical needs. Her profile underscores the importance of a comprehensive, multidisciplinary approach to care that addresses both her neuropsychological and medical challenges.</p>
+<p>Case #1’s diagnosis of autism spectrum disorder impacts how she communicates, interacts socially, and responds to sensory input. For Case #1, this means she has difficulty with reciprocal conversation, often goes off-topic, and prefers routines or repetitive behaviors like hand twisting and rocking. She is sensitive to loud noises and finds comfort in certain textures, which is common in autism. These features show up in her daily life as challenges with understanding social cues, maintaining eye contact, and adapting to changes in routine. Her need for structure and her sensory sensitivities can make new or unpredictable situations stressful, leading her to avoid social gatherings or rely on familiar routines for comfort.</p>
+<p>Her diagnosis of attention-deficit/hyperactivity disorder causes deficits in attention, impulse control, and working memory. In ADHD, the brain’s ability to filter distractions and maintain focus is reduced. For Case #1, this results in trouble following multi-step directions, needing repeated instructions, and difficulty organizing tasks. She has a history of needing extra time for academic work and struggles to keep track of information or shift attention quickly. These symptoms affect her ability to complete daily tasks, manage time, and adapt to new demands. In her work and home life, this can lead to unfinished chores, missed appointments, and frustration when routines are disrupted.</p>
+<p>Case #1’s trauma- and stressor-related disorder is shaped by her history of early loss, emotional abuse in the workplace, and ongoing stress. Case #1’s experiences can make her more sensitive to perceived threats, increase anxiety, and cause strong emotional reactions to reminders of past trauma. In daily life, Case #1 may experience panic attacks, emotional shutdowns, or self-injurious behaviors when she feels overwhelmed or ridiculed. The dysregulation rooted in Autism is exacerbated by the experience of traumatic events. Her trauma history interacts with her autism and ADHD, making it harder to regulate emotions, communicate needs, and recover from setbacks. The combination of these diagnoses means that Case #1’s challenges are complex and interconnected, affecting her ability to function independently, maintain relationships, and manage daily routines. Each condition adds a layer of difficulty, and together they shape her unique experience and need for comprehensive support.</p>
+<p>Please refer to the DSM-V criteria section below for further details on diagnosis eligibility.</p>
+<p>DSM-5 Criteria and Examples for Diagnoses</p>
+<p>Autism Spectrum Disorder (299 [F84.0])</p>
+<p>A.  Persistent deficits in social communication and social interaction across multiple contexts, as manifested by all of the following:</p>
+<p>1.  Deficits in social-emotional reciprocity</p>
+<p>-   Example: Case #1 struggles to engage in reciprocal conversations and often perseverates on topics, going off-topic during discussions. She does not like to start conversations and her interactions are mostly one-sided, focusing on her own experiences rather than mutual dialogue.</p>
+<p>2.  Deficits in nonverbal communicative behaviors used for social interaction</p>
+<p>-   Example: Case #1 has inconsistent eye contact and her facial expressions are infrequent and lack variety. During the ADOS-2, her use of gestures was either exaggerated or restricted, and her emotional expressions were often awkward or limited in range.</p>
+<p>3.  Deficits in developing, maintaining, and understanding relationships</p>
+<p>-   Example: Case #1 has major challenges in forming relationships and understanding social cues, as shown by her ABAS-3 Social score (below 1st percentile). She avoids social interaction, does not participate in social outings, and has not had romantic partners since her early twenties.</p>
+<p>B.  Restricted, repetitive patterns of behavior, interests, or activities, as manifested by at least two of the following:</p>
+<p>1.  Stereotyped or repetitive motor movements, use of objects, or speech</p>
+<p>-   Example: Case #1 displays repetitive physical behaviors, such as hand twisting and rocking back and forth. She also bounces her leg, rocks, and verbally repeats certain phrases, especially when discussing stressful experiences.</p>
+<p>2.  Insistence on sameness, inflexible adherence to routines, or ritualized patterns of verbal or nonverbal behavior</p>
+<p>-   Example: Case #1 demonstrated some rigidity, such as refusing to discuss her age and perseverating on past negative experiences.</p>
+<p>3.  Highly restricted, fixated interests that are abnormal in intensity or focus</p>
+<p>-   Example: Case #1 often perseverates on topics and focuses on her own interests during conversations, with minimal social small talk.</p>
+<p>4.  Hyper- or hyporeactivity to sensory input or unusual interest in sensory aspects of the environment</p>
+<p>-   Example: Case #1 has reported sensory sensitivities, especially to loud noises, and prefers the comfort of being wrapped tightly. She frequently rubbed a soft blanket between her fingers during the evaluation.</p>
+<p>C.  Symptoms must be present in the early developmental period</p>
+<p>-   Example: Case #1 stopped talking around age three after experiencing trauma and had behavioral struggles, including meltdowns with head banging and excessive crying in early childhood.</p>
+<p>D.  Symptoms cause clinically significant impairment in social, occupational, or other important areas of current functioning</p>
+<p>-   Example: Case #1’s therapist and psychiatrist expressed concerns about her significant difficulties with daily functioning. She has ongoing struggles with self-care, social interaction, and independent living.</p>
+<p>E.  These disturbances are not better explained by intellectual disability or global developmental delay</p>
+<p>-   Example: Case #1 completed high school without intervention or supportive services and performed well in reading, suggesting her difficulties are not solely due to intellectual disability.</p>
+<p>Unspecified Attention-Deficit/Hyperactivity Disorder (314.01 [F90.9])</p>
+<p>A.  A persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development</p>
+<h4>1.  Inattention (six or more symptoms for at least six months):</h4>
+<p>-   Example: Case #1’s management team at the post office expressed concern about her processing speed. She needed more time to complete tests in college and directions may need to be repeated for her to follow them.</p>
+<p>2.  Hyperactivity and impulsivity (six or more symptoms for at least six months):</p>
+<p>-   Example: Case #1 was often told to “sit down” and “keep still” when she was younger. She was described as having meltdowns and excessive crying in childhood.</p>
+<p>B.  Several inattentive or hyperactive-impulsive symptoms were present prior to age 12 years</p>
+<p>-   Example: Case #1 was told to “sit down” and “keep still” as a child and had behavioral struggles, including meltdowns and head banging.</p>
+<p>C.  Several symptoms are present in two or more settings</p>
+<p>-   Example: Case #1 has had difficulties in school (needed more time for tests), at work (processing speed concerns), and at home (needs repeated directions).</p>
+<p>D.  There is clear evidence that the symptoms interfere with, or reduce the quality of, social, academic, or occupational functioning</p>
+<p>-   Example: Case #1 is no longer able to work due to emotional stress and has ongoing struggles with daily living skills.</p>
+<p>E.  The symptoms do not occur exclusively during the course of schizophrenia or another psychotic disorder and are not better explained by another mental disorder</p>
+<p>-   Example: Case #1 has multiple diagnoses, but her ADHD symptoms are noted separately from her other conditions.</p>
+<p>Other Specified Trauma- and Stressor-Related Disorder (309.89 [F43.8])</p>
+<p>A.  Exposure to actual or threatened death, serious injury, or sexual violence</p>
+<p>-   Example: Case #1’s mental health services began after a work-related trauma. She also experienced trauma in early childhood, including the loss of a caregiver.</p>
+<p>B.  Presence of symptoms related to trauma and stress, but not meeting full criteria for PTSD or other trauma- and stressor-related disorders</p>
+<p>-   Example: Case #1 became mute after the loss of her caregiver at age three. She described becoming dysregulated in response to various triggers, especially when she feels ridiculed or mistreated, and may shut down emotionally or engage in self-injurious behaviors.</p>
+<p>C.  The disturbance causes clinically significant distress or impairment in social, occupational, or other important areas of functioning</p>
+<p>-   Example: Case #1 is no longer able to work due to emotional stress and has ongoing struggles with social interaction and self-care.</p>
+<p>D.  The disturbance does not meet the full criteria for any of the disorders in the trauma- and stressor-related disorders diagnostic class</p>
+<p>-   Example: Case #1 was initially diagnosed with PTSD, but her current diagnosis is Other Specified Trauma- and Stressor-Related Disorder, indicating her symptoms do not meet full PTSD criteria.</p>
+<h4>Recommendations:</h4>
+<h4>The following are recommendations for intervention:</h4>
+<p>1.  Follow up with Case #1’ service coordinator regarding support and services.</p>
+<p>2.  Case #1 will benefit from a rocking (gliding) chair to assist with self-soothing. It would also be beneficial if the chair could lift her up due to limited mobility.</p>
+<p>3.  Case #1 needs assistance with daily living skills. She is especially in need of support with administrative matters. She struggles to complete necessary paperwork due to her executive function deficits.</p>
+<p>4.  Provide ongoing support with self-care routines, including bathing, grooming, and dressing, to help Case #1 maintain hygiene and independence.</p>
+<p>5.  Offer regular assistance with meal preparation, focusing on teaching simple cooking skills and ensuring access to healthy food options.</p>
+<p>6.  Arrange for continued in-home support for household chores, such as cleaning and laundry, to help Case #1 maintain a safe and organized living environment.</p>
+<p>7.  Support Case #1 in managing her medications and medical appointments, including reminders and help with scheduling, to ensure her health needs are met.</p>
+<p>8.  Provide help with transportation for community outings, medical visits, and errands, using her Medi-Cal health plan or other accessible services.</p>
+<p>9.  Assist Case #1 with managing her finances, including budgeting, paying bills, and making purchases, to promote financial stability.</p>
+<p>10. Offer social skills training and opportunities for supported social interaction to help Case #1 build and maintain relationships.</p>
+<p>11. Provide support with communication, including help understanding complex verbal information and expressing her needs clearly.</p>
+<p>12. Encourage participation in meaningful activities, such as singing and praying for others, to support her sense of purpose and connection.</p>
+<p>13. Address sensory needs by allowing access to comfort items, such as soft blankets, and supporting her use of sensory-seeking behaviors in safe ways.</p>
+<p>14. Monitor for signs of emotional distress or self-injurious behavior, and provide strategies for emotional regulation and coping with frustration.</p>
+<p>15. Support Case #1 in advocating for herself in administrative and legal matters, including her efforts to challenge previous employment decisions.</p>
+<p>16. Continue coordination with her mental health providers to ensure her psychiatric and therapeutic needs are addressed.</p>
+<p>17. Provide reminders and support for regular dental and medical care, including immunizations and follow-up appointments.</p>
+<p>18. Offer help with organizing and completing paperwork related to benefits, insurance, and other administrative tasks.</p>
+<p>19. Encourage the use of written reminders, lists, and visual supports to help Case #1 remember important tasks and routines.</p>
+<p>20. Support Case #1 in maintaining connections with her extended family and social network, including facilitating communication with relatives who live out of state</p>
+<p>[]</p>
+<p>Test Data</p>
+<p>General Cognitive/Intellectual Functioning</p>
+<h4>WAIS-5</h4>
+<p>------------------------------------------------------------- ----------------------- ------------ ---------------- Wechsler Adult Intelligence Scale, Fifth Edition – (WAIS-5) Primary Indices and Subtests                                  Standard/Scaled Score   Percentile   Classification Verbal Comprehension                                          76                      5            Below Average Similarities                                                  5                       5            Below Average Vocabulary                                                    6                       9            Low Average Block Design                                                  8                       25           Average Fluid Reasoning                                               105                     63           Average Matrix Reasoning                                              13                      84           High Average Figure Weights                                                9                       37           Average Digit Sequencing                                              7                       16           Low Average Digits Forward                                                10                      50           Average Coding                                                        5                       5            Below Average Full Scale                                                    83                      13           Low Average x                       x            x</p>
+<p>------------------------------------------------------------- ----------------------- ------------ ----------------</p>
+<p>Autsim Measures</p>
+<p>[]</p>
+<p>------------------------------------------------------- ------- Social Responsiveness Scale, Second Edition – (SRS-2) Indices and Subtests                                    Rater Social Awareness                                        58 Social Cognition                                        62 * Social Communication                                    68 * Social Motivation                                       79 ** Restricted Interests and Repetitive Behavior            65 * Social Communication and Interaction                    69 * Total Score                                             69 * T-score: * At-Risk; ** Clinically Significant ------------------------------------------------------- -------</p>
+<p>Adaptive Function</p>
+<p>--------------------------------------------------------------- ---------------- Adaptive Behavior Assessment System, Third Edition – (ABAS-3) Indices and Subtests                                            Other relative Communication                                                   1 Functional Academics                                            9 Self-Direction                                                  1 Conceptual                                                      67 Leisure                                                         1 Social                                                          1 Social                                                          58 Community Use                                                   1 Home Living                                                     1 Health and Safety                                               1 Self-Care                                                       3 Practical                                                       61 General Adaptive Composite                                      61 --------------------------------------------------------------- ----------------</p></div></details>
+<details><summary><span class="pill">Case #2</span> Child evaluation — ASD, custody-shared</summary><div class="casebody"><p>Consulting Collective</p>
+<p>3838 W. Carson Street Suite 360</p>
+<p>Torrance CA 90503</p>
+<h4>PSYCHOLOGICAL EVALUATION</h4>
+<p>Name: Case #2</p>
+<p>Date of Birth: [redacted]</p>
+<p>Date of Evaluation: 03/13/23, 03/21/2023, 03/27/23</p>
+<p>Evaluator: Krystel Edmonds-Biglow, Psy.D.</p>
+<p>Name of Referring Agency: the Regional Center</p>
+<p>Service Coordinator: [redacted]</p>
+<h4>Confidentiality/Limits of Informed Consent:</h4>
+<p>The following report may contain sensitive information subject to misinterpretation by those untrained in interpreting psychological assessment data. Disclosure of any material herein without the permission of the court, the legal guardian or the holder of the privilege is prohibited unless in accordance with WIC Section 5328.</p>
+<p>At the present time California is operating under a Shelter in place order as a consequence of the COVID-19 pandemic. This assessment was conducted using telehealth methods (including remote observation of performance via audiovisual technologies). The standard administration of these procedures involves in-person, face-to-face methods. The impact of applying non-standard administration methods has been evaluated, only in part, by scientific research. While every effort was made to simulate standard assessment practices, the diagnostic conclusions and recommendations for treatment provided in this report are being advanced with these reservations. The parent/guardian was made aware of these limitations and has provided consent to this remote assessment.</p>
+<h4>Identification and Referral:</h4>
+<p>Case #2 is a 5-year-old Caucasian male referred by Harbor Regional Center, to determine if he meets criteria for a diagnosis of Autism.</p>
+<h4>Significant History:</h4>
+<p>Information was obtained from an interview with Case #2, Jaquelyn the mother (mother), the father (father) and a review of the file.</p>
+<p>Current Behavioral Problems or Developmental Limitations</p>
+<p>the mother was asked to report her concerns about Case #2’s behavior and development. She reported that she initially became concerned when he was approximately two years old but most recently his pediatrician and school personnel have recommended that he be evaluated. She reported that Case #2 has characteristics of Autism such as difficulty making and maintaining peer relationships, difficulty understanding social cues and boundaries, difficulty attending, poor emotional/sensory regulation, and repetitive motor and vocal mannerisms. the mother reported that Case #2 displays poor impulse control; he often touches things that are not his, stands up and wanders during table/rug activities (in school), runs around in class, and makes unintelligible noises at seemingly random intervals. He elopes within the classroom, but not out of class. the mother shared that he has difficulty controlling his body when excited or dysregulated. He does well when holding her hand. He has difficulty accepting corrections and requires constant reminding to follow school rules. Case #2 becomes emotionally dysregulated frequently (especially at school). the mother stated when Case #2 is upset, he will flail his arms, yell, scream, will not look at others, and will not let others touch him. His emotional outbursts include crying, screaming, kicking, falling to the ground, throwing toys/objects, and withdrawal. Tantrum episodes last up to 15-20 minutes and occur up to 1-2 times per day. Triggers to the behaviors are not getting his way or what he wants, being told no, transitions from preferred activities, unexpected visitors, or frustration with his inability to complete a task. Self-injurious behaviors include throwing himself on the floor and head banging.</p>
+<p>the mother also reported that Case #2 doesn’t like loud noises, some textures of foods, some fabric textures (does not like to wear clothing), and tags on his clothing.</p>
+<p>When asked about his social interaction with others, the mother reported that Case #2 will not initiate play with other children but will play with them if they initiate first. During “play” the interaction is often parallel or transactional. the mother reported that Case #2 mumbles a lot and it is often difficult to understand him. He points with an index finger for a desired object and to initiate joint attention. Hs pointing is not accompanied by a glance in the direction of the desired object. Case #2 struggles to interpret social cues, is inconsistent with eye contact, and he does not consistently use communicative gestures. Case #2 responds to his name inconsistently.</p>
+<p>When asked about restricted interests and repetitive behaviors, the mother reported that Case #2 observes objects close to his face, uses a side eye gaze, and makes repetitive noises. Case #2 paces back and forth, rocks, jumps, and hand flaps. Case #2 is preoccupied with various things like refrigerators, music and dancing. These behaviors are observed at home and in school. the mother began noticing them when he was a toddler.</p>
+<p>the father was also interviewed and asked about any concerns that he has about Case #2 and his development. He denied having significant concerns and mentioned that Case #2 “can be shy” and likes to spend hours with him building. the father stated that he wanted Case #2 to get any supportive services that he needed but did not articulate any concerns that would warrant intervention. Case #2 spends time with his dad alone during weekend visits.</p>
+<p>Current Living Situation</p>
+<p>Case #2 splits his time between parents, Jaquelyn the mother and the father, mother has 80% custody, and father has 20% custody. His mother’s home includes Case #2, his mother, and his two older siblings, [sibling] and [sibling]. His father lives in Case #2’s paternal grandmother’s home. Custody arrangements were cited as a significant family stressor.</p>
+<p>Developmental History</p>
+<p>the mother reported that Case #2 was born at 34 weeks gestation via repeat cesarean section due to preeclampsia. the mother was in good health and received prenatal care. Case #2’s birth weight was 6 pounds, 7 ounces. Case #2 was determined to be a healthy newborn and was discharged home with his mother. the mother reported no concerns for Case #2’s feeding and sleeping as a young infant. Early infancy was recalled as uneventful. the mother stated that Case #2 had a herniated umbilical cord, which resolved on its own after 4 months. Case #2 sat unassisted at 6 months, crawled at 9 months, and walked at 11 months. His first words were said after he was 2 years old, and initially spoke with a stutter. He has a history of language regression. Toilet training was achieved after he was 3 years old. the mother observed signs of ASD slightly before 2 years, when Case #2 started arm flapping and using echolalic speech.</p>
+<p>Educational/Occupational History</p>
+<p>Per Case #2&#x27;s psychoeducational evaluation and IEP goals from Redondo Beach Unified School District, dated 12/16/2022. His goals targeted task initiation (baseline: it takes Case #2 5 minutes and 30 seconds to start an activity after direction is given), Name Writing (baseline: Case #2 can write the first letter of his name independently, and can trace his first and last name with assistance and a visual), and Behavior (baseline: Case #2 struggles to use functional communication in lieu of vocal outbursts; outbursts last between 5 seconds to 20 minutes. He has not yet been observed to use his words independently to ask for help or communicate needs without increased prompting).</p>
+<p>Per psychoeducational evaluation, Case #2 was referred for an assessment by his Student Success Team, due to concerns regarding behaviors, communication, and distractibility. On the Kaufman, Case #2&#x27;s scores were as follows: Sequential 109, Simultaneous 71, Learning 100, and Knowledge 112. On achievement testing, Case #2 scored in the Below Average range in Mathematics, in the Borderline Impaired/Delayed range in Reading, in the Average range in Writing, and in the Average range in Spoken Language. On the BASC, Case #2&#x27;s father, the father rated him in the Average range in all areas. the mother rated him in the Clinically Significant range for Externalizing Problems, Behavioral Symptoms, and Adaptive Skills, and in the At-risk range for Internalizing problems. Case #2&#x27;s teacher rated him in the At-Risk range for Externalizing Problems, Behavioral Symptoms, and Adaptive Skills, and in the Average range for Internalizing Problems. On the ASRS, the father rated him in the Average range in all areas (total score 52). the mother’s total score was Very Elevated (77). His teacher&#x27;s total score was Elevated (66). On the ABAS-3, the composite score per the father&#x27;s report was 104 (average in all areas). Case #2&#x27;s composite score per the mother&#x27;s report was 73 (Low in all areas, except Social, which was Below Average). Case #2 was found to meet the eligibility criteria for special education services under Autism/Autistic-Like.</p>
+<p>the mother reported Case #2 attends a Co-Teach Transitional Kindergarten classroom at Tulita Elementary School. Case #2 was found eligible for IEP services in December 2022, under the primary disability of Autism/Autistic-Like. the mother stated that she was unsure of current services at school and IEP will be requested when signed consents are received.</p>
+<p>Health History</p>
+<p>When asked about health history, the mother reported that Case #2 has been in good physical health but gets colds frequently. He has no history of seizures, head injuries, surgeries, or overnight hospitalizations. There is no known history of significant medical illnesses. Immunizations are up to date. Case #2 has no known food or medicinal allergies. There are no hearing concerns, however Case #2 had fluid in his ears at his last hearing check and will be re-tested in four weeks. He wears glasses for nearsightedness.</p>
+<h4>Test Administered:</h4>
+<h4>WPPSI-IV</h4>
+<p>Vineland-Third Edition (VABS-3)</p>
+<p>Social Responsiveness Scale-Second Edition (SRS-2)</p>
+<p>Autism Diagnostic Interview-Revised (ADI-R)</p>
+<p>ADOS-2 Module 3</p>
+<h4>Behavioral Observations:</h4>
+<p>Case #2 is a 5-year-old Caucasian male. He was accompanied to his appointment by his mother and her partner. When Case #2 arrived in the waiting area he immediately noticed and asked about the refrigerator and its contents. He was also observed to become excited and began jumping and flapping his hands. The family was then escorted into the testing office. He was told that he would be playing a thinking game and other play activities. He agreed to participate and sat at the child’s table.</p>
+<p>Speech/Thought Content</p>
+<p>Case #2 was observed to speak in full sentences. But he barely spoke. Sometimes he was difficult to understand. His voice tone was low and there was some inflection in his voice, but it was limited. Case #2 did not participate in small talk or initiate a conversation with the evaluator or his caregivers. He only spoke when answering direct questions.</p>
+<p>Reciprocal Social Interaction</p>
+<p>Case #2 did not make eye contact while speaking. He was cooperative and did what he was told but Case #2 did not engage in a reciprocal conversation with the evaluator or play.Case #2 did not demonstrate insight about the opinions or experiential realities of others. He did not comment on the thoughts and feelings of others.</p>
+<p>Restricted/Repetitive Behaviors</p>
+<p>Case #2 was observed to make repetitive noises while testing. He was also observed to rock in his seat and flap his hands.</p>
+<h4>Test Results:</h4>
+<p>The use of standardized assessment measurements should not be employed as the sole criteria in developing a treatment plan or in the placement of an individual. Interpretive caution should be exercised. Under the circumstances, such measures should not be considered as indicators of future performance or natural endowment. They can however, be a valid indicator of current adjustment and skills. Particular caution must be exercised in interpreting these results due to ethnic and cultural opportunity.</p>
+<p>General Intellectual Ability</p>
+<p>Case #2 was administered 5 subtests of the Wechsler Preschool and Primary Scale of Intelligence—Fourth Edition (WPPSI-IV). Case #2’s general cognitive ability score will not be reported due to the significant variation between subtest scores. Due to his communication deficits and low attention span, it is unclear whether or not Case #2’s scores are a true representation of his cognitive ability. His score on the Information subtest fell into the Average range (SS=10) suggesting a relative strength in general fund of knowledge. Case #2’s score on the Picture Memory subtest fell into the Low Average range (SS=8). His scores on the Block Design, Matrix Reasoning and Similarities subtests fell into the Below Average range (SS=7, SS=6 and SS=6, respectively). Suggesting a relative weakness in nonverbal fluid reasoning, planning, abstract reasoning, and verbal reasoning. His Bug Search score fell into the Low range (SS=5) suggesting a weakness in scanning, processing speed, sustaining attention and ability to limit distractions.</p>
+<p>the mother served as an informant for Case #2’s adaptive functioning skills. The VABS-3 was administered to evaluate his adaptive functioning.</p>
+<p>Adaptive</p>
+<p>The Adaptive Behavior Composite (ABC) provides an overall summary measure of Case #2&#x27;s adaptive functioning. His ABC standard score is 80, with a 95% confidence interval of 77 to 83. His percentile rank of 9 means that his score was greater than or equal to 9% of individuals in Case #2&#x27;s age group in the Comprehensive Parent/Caregiver Form normative sample.</p>
+<p>Communication Domain</p>
+<p>The Communication domain measures how well Case #2 exchanges information with others. His Communication standard score is 86, with a 95% confidence interval of 81 to 91. This corresponds to a percentile rank of 18.</p>
+<p>Case #2&#x27;s Communication domain standard score is based on his scores on three subdomains: Receptive, Expressive, and Written. The Receptive subdomain assesses attending, understanding, and responding appropriately to information from others. Case #2&#x27;s Expressive score reflects his use of words and sentences to express himself verbally. The Written subdomain score conveys an individual&#x27;s use of reading and writing skills.</p>
+<p>Case #2&#x27;s v-scale scores are 14 for Receptive, 14 for Expressive, and 11 for Written. Pairwise difference comparisons among these scores show that the Receptive score is significantly higher than the Written score and that the Expressive score is significantly higher than the Written score.</p>
+<p>Daily Living Skills Domain</p>
+<p>The Daily Living Skills domain assesses Case #2&#x27;s performance of the practical, everyday tasks of living that are appropriate for his age. His standard score for Daily Living Skills is 81, with a 95% confidence interval of 76 to 86 and a percentile rank of 10.</p>
+<p>Case #2&#x27;s Daily Living Skills domain standard score is derived from his scores on three subdomains: Personal, Domestic, and Community. His Personal subdomain score expresses his level of self-sufficiency in such areas as eating, dressing, washing, hygiene, and health care. His Domestic score reflects the extent to which Case #2 performs household tasks such as cleaning up after himself, chores, and food preparation. The Community subdomain measures an individual&#x27;s functioning in the world outside the home, including safety, using money, travel, and rights and responsibilities.</p>
+<p>Case #2 received v-scale scores of 13 for Personal, 11 for Domestic, and 11 for Community. Pairwise difference comparisons among these scores show that the Personal score is significantly higher than the Domestic score and that the Personal score is significantly higher than the Community score.</p>
+<p>Socialization Domain</p>
+<p>Case #2&#x27;s score for the Socialization domain reflects his functioning in social situations. His Socialization standard score is 81, with a 95% confidence interval of 77 to 85. The percentile rank is 10.</p>
+<p>Case #2&#x27;s Socialization domain standard score is based on his scores on three subdomains: Interpersonal Relationships, Play and Leisure, and Coping Skills. Interpersonal Relationships assesses how an individual responds and relates to others, including friendships, caring, social appropriateness, and conversation. Case #2&#x27;s Play and Leisure score reflects how he engages in play and fun activities with others. His Coping Skills score conveys how well he demonstrates behavioral and emotional control in different situations involving others.</p>
+<p>Case #2&#x27;s v-scale scores are 12 for Interpersonal Relationships, 11 for Play and Leisure, and 11 for Coping Skills. Pairwise difference comparisons among these scores resulted in no statistically significant differences.</p>
+<p>Autism Measures</p>
+<p>The ADI-R was completed using the mother as the informant. The ADI-R measures the following: Abnormalities in Reciprocal Social Interaction; Qualitative Abnormalities in Communication; and Restricted, Repetitive, and Stereotyped Patterns of Behavior. Case #2’s scores met all of the diagnostic cutoffs for all areas of measurement for Autism, including Abnormalities in Reciprocal Social Interaction, Abnormalities in Communication, and Restricted and Stereotypic Patterns of Interest.</p>
+<p>Qualitative Abnormalities in Reciprocal Social Interaction</p>
+<p>the mother reported that Case #2 engages in social interactions with limited peers. The interaction is often parallel play. Case #2 does not make eye contact, use communicative gestures, or consistently consider the needs and perspectives of others. the mother stated that Case #2 did not participate in group activities or imaginary play. He has an interest in social connections with others, but Case #2 prefers social interactions with adults over interactions with peers. His interactions are dominated by his interests. His facial expressions vary but don’t always match the context.</p>
+<p>Qualitative Abnormalities in Communication</p>
+<p>the mother reported that Case #2 will point to express interest, but he does not consistently use communicative gestures. Case #2 does not engage in imaginary play or imitative social play. He will participate in some conversations with a limited number of individuals and his conversations focus on his interests.</p>
+<p>Restricted, Repetitive and Stereotyped Behaviors</p>
+<p>Case #2 flaps his hands, jumps, and licks his lips repetitively. He is also interested in music and will watch YouTube for music. Case #2 covers his ears when he hears loud noise, and he appears to have a high pain tolerance.</p>
+<p>Social Responsiveness Scale The SRS was completed by the mother and the father. Case #2 was rated in 5 subscale areas; Social Awareness, Social Cognition, Social Communication, Social Motivation and Autistic Mannerisms. His scores supported a diagnosis of Autistic Disorder on the form completed by the mother (T-Score=83). His cores did not support a diagnosis of Autistic Disorder on the form completed by his father (T-Score=51) The information collected from this checklist is very helpful in assessing Case #2’s strengths and weaknesses in the areas of: Social Awareness: Ability to pick up on social cues Social Cognition: Ability to interpret social cues once they are picked up Social Communication: Includes expressive social communication Social Motivation: The extent to which a respondent is generally motivated to engage in social-interpersonal behavior; elements of social anxiety, inhibition, and empathic orientation are included here Autistic Mannerisms: Includes stereotypical behaviors or highly restricted interests characteristics of autism</p>
+<p>Total T-Scores of 76T or higher = Severe range Scores in this range are strongly associated with a clinical diagnosis of Autistic Disorder. They suggest severe interference in everyday social interactions. In most clinical and educational settings, SRS scores at or above 76T from two separate informants provides very strong evidence of the presence of a clinical diagnosable autism spectrum disorder. Total T-Scores of 60T-75T= Mild to moderate range Scores in this range indicate deficiencies in reciprocal social behavior that are clinically significant and are resulting in mild to moderate interference in everyday social interactions. These scores are typical for children with mild or “high functioning” autism spectrum disorders. Total T-Scores of 59T or less= Normal range Children in the general population and not affected by autism spectrum conditions typically obtain scores in this range. When obtained on ratings in clinical settings, scores in this range usually suggest the absence of an autism spectrum condition and any psychosocial dysfunction noted at referral is more likely to be due to a non-autism-related condition. Rarely, children with very mild, “high functioning” autism spectrum conditions may be rated in the upper end of this range (55T-59T).</p>
+<p>The evaluator Administered the ADOS-2, Module 3. His scores fell above the cutoff for Autism Spectrum.</p>
+<p>Social Affect</p>
+<p>Case #2 was cooperative and appeared to be interested in play. He watched the evaluator use the action figures and then he began having them pretend to fly (mimicking the evaluator). He did not build on imaginary themes or initiate imaginary sequences of play. Case #2 did not participate in a full age appropriate reciprocal conversation. When the evaluator disclosed information, “I like chocolate cake”, Case #2 did not respond verbally or with gestures demonstrating acknowledgment. He did not discuss events. Case #2 was not observed to use conventional gestures when speaking. Case #2’s eye contact was inconsistent, and he did not demonstrate awareness of relational complexity. When asked how he knows if someone is his friend, Case #2 responded, “they are my friend”. When asked if he ever does anything that irritates or annoys others, he answered, “no”. During the Tell A Story task, Case #2 described the pictures in a concrete way. He did not create a narrative or comment on the facial expressions in the pictures.</p>
+<p>Restricted and Repetitive Behavior</p>
+<p>Case #2 was observed to be focused on bean bag pillow. He also made repetitive verbal noises.</p>
+<h4>Diagnostic Impressions:</h4>
+<p>299.0 (F84.0) Autism Spectrum Disorder with accompanying language impairment, without intellectual impairment.</p>
+<p>Level 2 Social Communication</p>
+<p>Level 2 Repetitive/Restrictive Behavior</p>
+<p>314.01 (F90.2) Attention Deficit Hyperactivity Disorder, Combined Presentation</p>
+<h4>Discussion and Recommendations:</h4>
+<p>Case #2 was referred for an evaluation of Autism due to a history of social deficits, rigid behavior, and emotional dysregulation. His behaviors have been disruptive for years interfering with academic function. Due to an escalation in behavior, Case #2 was evaluated by the school district and made eligible for services under Autism. His pediatrician also expressed concern and suggested that he be evaluated by the Regional Center.</p>
+<p>Case #2 struggles with reciprocal social interaction with peers and adults. When around other children he makes odd noises and misses social cues. He engages in leisure activities or playdates with peers when planned by his mother.</p>
+<p>Case #2 also has to be prompted multiple times to follow directions and remember tasks. He is easily distracted and often forgets things. Case #2 is also hyper and struggles to remain seated when expected to during school hours.</p>
+<p>the mother also reported that there are concerns about emotional dysregulation. This weekly and is worse during school hours.</p>
+<p>The following criteria from DSM 5 for Autistic Disorder have been identified:</p>
+<p>A.  Persistent deficits in social communication and social interaction across contexts, not accounted for by general developmental delays and manifested by:</p>
+<p>A1. Deficits in social-emotional reciprocity</p>
+<p>A2. Deficits in nonverbal communicative behaviors</p>
+<p>A3. Deficits in developing and maintaining relationships.</p>
+<h4>MET</h4>
+<p>As described in the Behavioral Observations above, Case #2’s behavior met three out of three criteria. Case #2 does not make eye contact, vary his facial expression, or use communicative gestures. Case #2 does not have insight into how others may perceive his behavior. He has difficulty initiating and sustaining reciprocal social interaction with peers.</p>
+<p>Restricted, repetitive patterns of behavior, interests, or activities manifested by at least 2 of four symptoms.</p>
+<p>B1. Stereotyped or repetitive speech, motor movements, or use of objects.</p>
+<p>B2. Excessive adherence to routines, ritualized patterns of verbal or non-verbal</p>
+<p>behavior, or excessive resistance to change.</p>
+<p>B3. Highly restricted, fixated interests that are abnormal in intensity or focus.</p>
+<p>B4. Hyper or hypo-reactivity to sensory input or unusual interest in sensory aspects</p>
+<p>of the environment.</p>
+<h4>MET</h4>
+<p>Case #2 engages in repetitive behaviors and has restricted interests. He struggles with emotional dysregulation and has a variety of sensory sensitivities that have impacted his daily life. Case #2 becomes emotionally dysregulated multiple time per week.</p>
+<p>A.  Symptoms must be present in early childhood.</p>
+<h4>MET</h4>
+<p>Case #2’s difficulties were first observed when he was a toddler.</p>
+<p>B.  Symptoms together limit and impair everyday functioning.</p>
+<h4>MET</h4>
+<p>Case #2’s symptoms significantly impact his daily functioning.</p>
+<p>The test results, behavioral observations and reported history also support a diagnosis of Attention Deficit Disorder Combined type. Case #2 has difficulty sustaining focus, remembering instructions and sitting or standing still when required. His deficits also create barriers for academic performance and successful social interactions.</p>
+<h4>The following are recommendations for intervention:</h4>
+<p>1.  Follow up with Case #2’s HRC service coordinator regarding support and services.</p>
+<p>2.  Case #2 should be evaluated by a behaviorist and be provided with ABA therapy as determined. Case #2’s therapy should be provided by one therapist in both parents’ homes to maintain consistency. Both parents should be clear about the intervention goals and work to the best of their ability to provide consistent rules and expectations for Case #2 to function optimally. Structure and consistency will be more important to Case #2 compared to typical developing children. Variations in expectations and rule enforcement can result in increased emotional dysregulation and an increase in disruptive behavior across all settings.</p>
+<p>3.  Case #2 would benefit from family psychotherapy focused on collaborative parenting and learning about Case #2 and his strengths and limitations. The therapist should have experience with Neurodivergent populations.</p>
+<p>4.  Case #2 would benefit from Social Skills training.</p>
+<p>5.  Case #2 would benefit from participation in extracurricular activities focused on his interests so that he can develop friendships with individuals with shared interests.</p>
+<p>6.  Case #2 would benefit from occupational therapy to assist with sensory processing deficits.</p>
+<p>7.  Case #2’s caregivers would benefit from support and education about ASD.</p>
+<p>8.  This evaluation should be shared with Case #2’s primary physician to facilitate the coordination of care.</p>
+<p>9.  Case #2 would benefit from continued special education services with an eligibility of Autism. An additional eligibility of Other Health Impairment (OHI) for symptoms associated with ADHD will also be helpful. He will need support around social interaction with peers, executive function, speech and occupational skills.</p>
+<p>Please feel free to contact me for additional information,</p>
+<p>[]</p>
+<p>Test Data</p>
+<p>WPSSI-IV FSIQ=Can not be reported due variation between subtest scores</p>
+<p>+----------------------+--------+------------+------------------+--------+------------+ |                      | Scaled | Percentile |                  | Scaled | Percentile | |                      |        |            |                  |        |            | |                      | Score  | Rank       |                  | Score  | Rank       | +======================+========+============+==================+========+============+ | Verbal Comprehension |        |            | Fluid Reasoning  |        |            | +----------------------+--------+------------+------------------+--------+------------+ | Information          | 10     |            | Matrix Reasoning | 6      |            | +----------------------+--------+------------+------------------+--------+------------+ | Similarities         | 6      |            | Picture Concepts | N/A    |            | +----------------------+--------+------------+------------------+--------+------------+ | Vocabulary           | N/A    |            |                  |        |            | +----------------------+--------+------------+------------------+--------+------------+ | Comprehension        | N/A    |            | Working Memory   |        |            | +----------------------+--------+------------+------------------+--------+------------+ | Receptive Vocabulary | N/A    |            | Picture Memory   | 8      |            | +----------------------+--------+------------+------------------+--------+------------+ | Picture Naming       |        |            | Zoo Locations    | N/A    |            | +----------------------+--------+------------+------------------+--------+------------+ |                      |        |            |                  |        |            | +----------------------+--------+------------+------------------+--------+------------+ | Visual Spatial       |        |            | Processing Speed |        |            | +----------------------+--------+------------+------------------+--------+------------+ | Block Design         | 7      |            | Bug Search       | 5      |            | +----------------------+--------+------------+------------------+--------+------------+ | Object Assembly      | N/A    |            | Cancellation     | N/A    |            | +----------------------+--------+------------+------------------+--------+------------+ |                      |        |            | Animal Coding    | N/A    |            | +----------------------+--------+------------+------------------+--------+------------+ |                      |        |            |                  |        |            | +----------------------+--------+------------+------------------+--------+------------+</p>
+<p>ABC and Domain Score Summary</p>
+<p>ABC                           Standard Score (SS)   95% Confidence Interval   Percentile Rank   SS Minus Mean SS*   Strength or Weakness**   Base Rate ----------------------------- --------------------- ------------------------- ----------------- ------------------- ------------------------ ----------- Adaptive Behavior Composite   80                    77 - 83                   9 Domains Communication                 86                    81 - 91                   18                3.3                 -                        - Daily Living Skills           81                    76 - 86                   10                -1.7                -                        - Socialization                 81                    77 - 85                   10                -1.7                -                        -</p>
+<p>Adaptive Level    Subdomain v-Scale Scores   Domain and ABC Standard Scores ----------------- -------------------------- -------------------------------- High              21 to 24                   130 to 140 Moderately High   18 to 20                   115 to 129 Adequate          13 to 17                   86 to 114 Moderately Low    10 to 12                   71 to 85 Low               1 to 9                     20 to 70</p>
+<h4>ADI-R</h4>
+<p>Abnormalities in Reciprocal Social Interaction    Score=15    Diagnostic Cutoff=10 ------------------------------------------------- ----------- ---------------------- Abnormalities in Communication                    Score =15   Diagnostic Cutoff=8 Restricted and Stereotypic Patterns of Interest   Score=8     Diagnostic Cutoff=3</p>
+<p>Parent/Caregiver Report SRS-2 Results (mother report)</p>
+<p>+----------------------+---------+----------------+ |                      | T-Score | Range          | +======================+=========+================+ | SRS Total            | 83      | Severe Range   | +----------------------+---------+----------------+ | Social Awareness     | 64      | Moderate Range | +----------------------+---------+----------------+ | Social Cognition     | 74      | Severe Range   | +----------------------+---------+----------------+ | Social Communication | 85      | Severe Range   | +----------------------+---------+----------------+ | Social Motivation    | 79      | Severe Range   | |                      |         |                | |                      |         |   --           | |                      |         |   --           | |                      |         |                | |                      |         | Range          | +----------------------+---------+----------------+ | RRB 85 Severe Range  |         |                | +----------------------+---------+----------------+ |                      |         |                | +----------------------+---------+----------------+</p>
+<p>Parent/Caregiver Report SRS-2 Results (father report)</p>
+<p>+----------------------+---------+--------------+ |                      | T-Score | Range        | +======================+=========+==============+ | SRS Total            | 51      | Normal Range | +----------------------+---------+--------------+ | Social Awareness     | 54      | Normal Range | +----------------------+---------+--------------+ | Social Cognition     | 46      | Normal Range | +----------------------+---------+--------------+ | Social Communication | 46      | Normal Range | +----------------------+---------+--------------+ | Social Motivation    | 56      | Normal Range | |                      |         |              | |                      |         |   --         | |                      |         |   --         | |                      |         |              | |                      |         | Range        | +----------------------+---------+--------------+ | RRB 55 Normal Range  |         |              | +----------------------+---------+--------------+</p>
+<p>ADOS-2                               Score   Comparison Score ------------------------------------ ------- ----------------------- Social Affect                        17      10 (Autism Cut off=9) Restricted and Repetitive Behavior   4</p></div></details>
+<details><summary><span class="pill">Case #3</span> Young child evaluation — developmental</summary><div class="casebody"><p>Consulting Collective</p>
+<p>3838 W. Carson Street, Suite 360</p>
+<p>Torrance, CA 90503</p>
+<h4>PSYCHOLOGICAL EVALUATION</h4>
+<p>Name: Case #3</p>
+<p>Date of Birth: [redacted]</p>
+<p>Date of Evaluation: 03/12/24, 03/19/24, 03/19/24 (Observation)</p>
+<p>Evaluator: Krystel Edmonds-Biglow, Psy.D.</p>
+<p>Name of Referring Agency: the Regional Center</p>
+<p>Service Coordinator: [redacted]</p>
+<h4>Confidentiality/Limits of Informed Consent:</h4>
+<p>The following report may contain sensitive information subject to misinterpretation by those untrained in interpreting psychological assessment data. Disclosure of any material herein without the permission of the court, the legal guardian, or the holder of the privilege is prohibited unless in accordance with WIC Section 5328.</p>
+<h4>Identification and Referral:</h4>
+<p>Case #3 was referred for a psychological evaluation to determine if he meets the criteria for Autism Spectrum Disorder (ASD).</p>
+<h4>Significant History:</h4>
+<p>Information was obtained from an interview with the mother (mother) and a review of the file.</p>
+<p>Records Reviewed</p>
+<p>Psychosocial report completed (12/05/23) by [Service Coordinator]</p>
+<p>Current Behavioral Concerns or Developmental Limitations</p>
+<p>the mother reported that she became concerned about Case #3’s behavior when he was approximately two years old. Case #3 was not babbling like other children his age and had a one-year speech delay. Additionally, Case #3 displays repetitive physical behaviors and difficulties in social interactions.</p>
+<p>When asked about social interactions with others, the mother reported that Case #3 is often self-directed, not engaging with peers or caregivers in a reciprocal way. He does not make consistent eye contact, primarily uses gestures like pointing and leading by the hand to communicate and does not participate in conversations or use language for social communication. Case #3 is nonresponsive to the approaches of peers unless prompted and uses more sign language or gestures to communicate when he wants something.</p>
+<p>When asked about repetitive behaviors, rigidity, and restricted interests, the mother reported that Case #3 has an oral fixation and likes to chew on plastic. He engages in hand flapping when excited, lines up toys, and has a preoccupation with dinosaurs, playing with them in a repetitive sequence.</p>
+<p>When asked about sensory sensitivity, the mother reported that Case #3 does not have any specific sensitivities to loud noises, bright lights, or crowds. He does not show aversion to noise or bright lights but demonstrates a need for sensory input, such as putting objects in his mouth.</p>
+<p>Case #3 also has a short attention span, enjoys limited pretend play, and can get frustrated when his routines are disrupted. He experiences emotional outbursts, including crying and falling to the ground, particularly when transitioning from preferred activities or when he does not get what he wants. Meltdowns can exceed 30 minutes.</p>
+<p>Current Living Situation</p>
+<p>Case #3 resides with his mother, the mother (28), father, the father (24), paternal grandparents, and uncle in their family home.</p>
+<p>Developmental History</p>
+<p>the mother reported that Case #3 was carried full term. She received prenatal care and refrained from ingesting any known toxic substances. Case #3 was delivered via vaginal delivery at White Memorial in Los a local medical center. He was determined to be a healthy newborn and was discharged home with his mother without a need for medical intervention.</p>
+<p>When asked about development, the mother reported that Case #3 sat unassisted at seven to eight months, crawled at eight to nine months, and walked at 16 months. His first use of communicative speech was at 24 months. Case #3 has a significant speech delay and continues to struggle with communicative speech. He is currently not toilet trained and still uses pull-ups, though he sometimes indicates when he needs to use the bathroom.</p>
+<p>Educational/Occupational History</p>
+<p>Case #3 is not currently enrolled in school. He has not received special education services and has primarily been home with his mother. The school district has not formally evaluated Case #3.</p>
+<p>Health History</p>
+<p>Case #3’s health is reported as “good.” He has no history of chronic medical illnesses, and his immunizations are up-to-date. Case #3 has no history of surgical procedures, seizures, head injuries, or overnight hospitalizations. He is not currently taking any medications. Case #3 is allergic to egg whites, peanuts, chicken, garlic, fish, and oats and requires EpiPen and Benadryl for allergic reactions. There are no current concerns for hearing or vision. Case #3 has received regular medical and dental care and has no unmet medical needs​.</p>
+<h4>Test Administered:</h4>
+<p>Developmental Assessment of Young Children-Second Edition (DAYC-2) Cognitive</p>
+<p>Adaptive Behavior Assessment System-Third Edition (ABAS-3)</p>
+<p>Autism Diagnostic Observation Scale-Second Edition (ADOS-2)</p>
+<p>Autism Diagnostic Interview-Revised (ADI-R)</p>
+<p>Social Responsiveness Scale-Second Edition (SRS-2)</p>
+<h4>Behavioral Observations:</h4>
+<p>Case #3 was accompanied to his appointment by his mother, the mother. When he arrived at the office, Case #3 was greeted by the evaluator. He briefly glanced at the evaluator but did not reciprocate the greeting verbally. Instead, he immediately began exploring the toys in the office with evident excitement.</p>
+<p>Case #3 showed particular interest in a set of dinosaurs and other toys available in the room. He engaged in solitary play, lining up the dinosaurs and inspecting them closely. During the cognitive assessment, Case #3 was easily distracted and struggled to focus on the tasks presented. His short attention span and difficulty understanding relational expectations impacted his ability to complete the cognitive assessment fully.</p>
+<p>The evaluator then shifted to the ADOS-2 assessment. For the free play section, Case #3 was presented with various toys. He showed excitement when playing with bubbles, smiling, and trying to pop them. He played with a shape sorter toy, allowing his mother and the evaluator to participate by putting shapes in the sorter, though he did not initiate these interactions himself.</p>
+<p>Case #3&#x27;s play was primarily solitary and repetitive. He engaged in hand flapping when excited, especially when handling the dinosaurs. He demonstrated some pretend play behaviors, such as making the dinosaurs &quot;kiss&quot; or &quot;fight,&quot; but he did not engage in reciprocal play with the evaluator or his caregiver. Case #3 followed directions from his mother, such as cleaning up toys, but struggled with transitions and became emotionally overwhelmed when it was time to leave the office. This led to a significant meltdown, lasting more than 30 minutes, characterized by crying and resistance to leaving the toys behind, falling to the ground, refusal to walk down the stairs and refusal to get in the car in the parking lot. Case #3’s meltdown was so severe that while outside a bystander came up to the evaluator and family and said she wondered if he was being mistreated.</p>
+<p>Speech</p>
+<p>Case #3 was observed to use single words sporadically but primarily relied on nonverbal communication such as pointing and gesturing to express his needs and interests. He attempted to say certain words, though his articulation was unclear, and he did not consistently use words in a communicative context. Case #3 did not participate in conversations, answer questions, or use language to facilitate social communication. He made occasional vocalizations and sounds, which were not directed towards anyone and did not constitute meaningful verbal interaction. His speech was mostly limited to repeating words or phrases when prompted, rather than initiating speech independently.</p>
+<p>Reciprocal Social interactions</p>
+<p>Case #3 played with a variety of toys during the assessment. He allowed the evaluator to blow bubbles but preferred to spend most of the time popping the bubbles himself. Case #3 showed a particular interest in a set of dinosaurs and engaged in solitary play with them, lining them up and inspecting them closely. He did not follow the evaluator’s lead through all the sequences of the ADOS-2 and became fixated on the dinosaurs.</p>
+<p>Case #3 played with the dinosaurs ritualistically, often repeating the same actions, such as making the dinosaurs &quot;kiss&quot; or &quot;fight.&quot; While he demonstrated some pretend behaviors, these were performed repetitively. On a few occasions, he looked towards his mother to seek visual reassurance, but he quickly returned his focus to the toys.</p>
+<p>Case #3 did not engage in reciprocal play with the evaluator. He did not initiate interactions with the evaluator or his mother, nor did he try to bring a toy to them to engage them in play. His play was solitary, and he seemed satisfied to play with a limited selection of toys in a repetitive manner. This lack of engagement and initiation in social interactions highlights his challenges in reciprocal social behaviors.</p>
+<p>Repetitive Behaviors</p>
+<p>Case #3 was observed to play with toys in a ritualistic way. When playing with dinosaurs, he repeatedly lined them up in a specific order and inspected them closely. He performed these actions in the exact same sequence multiple times in a row. Case #3 also engaged in hand flapping when excited, particularly when handling his favorite toys.</p>
+<p>During the session, Case #3 demonstrated repetitive behaviors such as flapping his hands and rubbing his head, thighs, and stomach when he became excited. He did not engage in echolalia during the session, but his mother reported that he often repeats words or short phrases in other settings. His repetitive actions with the toys and his hand flapping increased in intensity as he became more engaged with the assessment activities.</p>
+<p>Case #3’s fixation on the dinosaurs, his repetitive play patterns, and the physical manifestations of excitement indicate significant repetitive behaviors. These consistent and persistent behaviors highlight the need for targeted interventions to address these repetitive patterns​.</p>
+<p>Sensory</p>
+<p>Case #3 was observed to exhibit some sensory-seeking behaviors during the assessment. He showed a strong interest in tactile exploration, often touching and manipulating the toys closely. Case #3 did not display any signs of sensory sensitivity; he did not show aversion to noise, bright lights, or crowds.</p>
+<p>Throughout the session, Case #3 did not exhibit distress due to sensory stimuli in the environment. The office was quiet, and he remained calm and focused on his activities despite the presence of other people. Case #3 did not seem bothered by the sounds of conversation between his mother and the evaluator. He was able to transition between different activities without significant protest, although he had trouble with transitions at the end of the session, which led to a meltdown triggered by the need to leave his favorite toys behind.</p>
+<p>Overall, Case #3&#x27;s sensory behaviors included a strong interest in tactile exploration and an absence of sensory sensitivities, indicating that while he seeks sensory input, he does not exhibit hypersensitivity to common sensory stimuli.</p>
+<h4>Test Results:</h4>
+<p>The use of standardized assessment measurements should not be employed as the sole criteria in developing a treatment plan or in the placement of an individual. Interpretive caution should be exercised. Under the circumstances, such measures should not be considered as indicators of future performance or natural endowment. They can, however, be a valid indicator of current adjustment and skills. Particular caution must be exercised in interpreting these results due to ethnic and cultural opportunity.</p>
+<h4>Cognitive:</h4>
+<p>The DAYC-2 was used to measure Case #3’s cognitive ability. His score fell into the Poor range.</p>
+<h4>Adaptive Functioning:</h4>
+<p>the mother served as an informant for Case #3’s adaptive functioning skills. The ABAS-3 was administered to evaluate his adaptive functioning.</p>
+<p>The scores reported below overestimate Case #3’s skills and should be interpreted with caution. There are various contradictions throughout the entire ABAS-3 report but a couple will be highlighted below. It is possible that the mother misunderstood the questions. Based on the observations and caregivers report, Case #3’s adaptive skills are likely to fall in the low range.</p>
+<p>The General Adaptive Composite (GAC) summarizes performance across all adaptive skill areas. Case #3 obtained a GAC score of 82. Case #3&#x27;s current overall level of adaptive behavior is in the Below Average range, as high as or higher than 12% of children of the same age. Because the GAC provides the most complete measure of adaptive behavior, it will likely be the most reliable and accurate estimate of overall adaptive functioning. However, more detailed information about Case #3&#x27;s unique profile of adaptive functioning may be obtained by reviewing performance within adaptive domains and skill areas if significant differences exist between adaptive domain standard scores or skill area scaled scores.</p>
+<p>Conceptual</p>
+<p>The Conceptual domain standard score summarizes performance across the Communication, Functional Pre-Academics, and Self-Direction skill areas. Case #3&#x27;s Conceptual domain standard score of 71 is in the Extremely Low range, as high as or higher than 3% of children of the same age.</p>
+<p>Case #3&#x27;s communication abilities, including speech, listening, conversation, and nonverbal communication skills, are in the Extremely Low range. He functions in the Below Average range when performing basic pre-academic skills that form the foundations of reading, writing, and mathematics. His ability to make independent choices, exhibit self-control, and take responsibility when appropriate is in the Extremely Low range.</p>
+<p>Social</p>
+<p>The Social domain standard score summarizes performance across the Leisure and Social skill areas. Case #3&#x27;s Social domain standard score of 90 is in the Average range, as high as or higher than 25% of children of the same age.</p>
+<p>The leisure skills needed for engaging in play and recreational activities are in the Average range for Case #3. His ability to interact socially, initiate and maintain friendships, and express and recognize emotions is also in the Average range.</p>
+<p>This score overestimates Case #3’s true social capacity. Items endorsed included, “apologizing if he hurts the feelings of others”, “inviting others to his home for a visit”, “says when he feels happy, sad, scared or angry” and “showing respect to persons in authority, following directives.” Case #3 had a meltdown lasting over 30 minutes at the end of the session because the session ended. He wanted to take toys from the office and not being allowed to, prompted the meltdown. the mother reported that this is a common occurrence and often caregivers give him what he wants to avoid or limit his frustration. This does not support an “always score for following the directives of authority figures. Case #3’s use of communicative speech is limited. It seems unlikely that he would have the language skills requisite for apologizing and inviting others to his home.</p>
+<p>Practical</p>
+<p>The Practical domain standard score summarizes performance across the Community Use, Home Living, Health and Safety, and Self-Care skill areas. Case #3&#x27;s Practical domain standard score of 89 is in the Below Average range, as high as or higher than 23% of children of the same age.</p>
+<p>His ability to function in the community and to express knowledge of and interest in activities outside the home is in the Average range. Case #3&#x27;s level of functioning inside the home, including helping adults with household chores and taking care of personal possessions, is in the Average range. The health and safety skills needed to protect his physical well-being and prevent and respond to injuries, including following safety rules and showing caution when necessary, are in the Above Average range. His ability to perform self-care activities such as eating, dressing, and taking care of personal hygiene is in the Average range.</p>
+<p>It was reported on the ABAS-3 form that Case #3 always starts an activity when prompted. It was reported that he remains dry during the day and overnight, Case #3 is not toilet trained and still wears a diaper. Ms. [surname] also reported that Case #3 does not alert caregivers when he has to use the bathroom and he does not sit on the toilet.</p>
+<p>Motor Skills</p>
+<p>Case #3’s motor abilities, including the basic fine and gross motor skills needed for locomotion and manipulating the environment and the later development of skills necessary for more complex activities such as sports, are in the Average range. His ability to perform tasks such as running, throwing, catching, and using scissors is consistent with developmental expectations for his age, indicating no significant motor delays.</p>
+<p>Autism Measures</p>
+<p>The ADI-R was completed using the mother as the informant. It measures the following: abnormalities in Reciprocal Social Interaction, Qualitative Abnormalities in Communication, and Restricted, Repetitive, and Stereotyped Patterns of Behavior. Case #3’s scores met all the diagnostic cutoffs for all measurement areas for Autism, including Abnormalities in Reciprocal Social Interaction, Abnormalities in Communication, and Restricted and Stereotyped Patterns of Interest.</p>
+<p>Qualitative Abnormalities in Reciprocal Social Interaction</p>
+<p>the mother reported that Case #3 does not consistently engage in reciprocal social interactions with peers or family members. Case #3 does not maintain eye contact, use communicative gestures, or consistently recognize the feelings and perspectives of others. He does not make eye contact, respond when his name is called, or seek out others for shared enjoyment. While he engages in some imaginary play independently, his play is repetitive. He does not engage in age appropriate imaginary play with others. He may approach other children but often gets too close when he sees other children. Case #3 uses others&#x27; hands to point to the things that he wants. He has not learned to respond to the emotional distress of others, and his facial expressions typically do not match the social context that he is in.</p>
+<p>Qualitative Abnormalities in Communication</p>
+<p>the mother reported that Case #3 will sometimes point to get something he needs. He does not nod his head to communicate yes and no, and his use of communicative gestures is limited. Case #3 engages in minimal imaginary play and does not engage in imitative social play. He does not participate in reciprocal conversations.</p>
+<p>Restricted, Repetitive and Stereotyped Behaviors</p>
+<p>Case #3 lines up toys, engages in hand flapping when excited, and has a preoccupation with dinosaurs. He performs actions such as making the dinosaurs &quot;kiss&quot; or &quot;fight&quot; in a repetitive sequence. Case #3 also demonstrates an oral fixation by chewing on plastic objects.</p>
+<p>The ADOS-2, Module 1, was administered to evaluate Case #3’s social reciprocity and communication capacity. The scores exceeded the cutoff for a diagnosis of Autistic Disorder,</p>
+<p>Social Affect</p>
+<p>During the ADOS-2 assessment, Case #3 showed interest in various toys during the free play section but did not follow the evaluator’s lead. He engaged in repetitive play with a set of dinosaurs, exhibiting ritualistic behaviors such as lining them up and making them &quot;kiss&quot; or &quot;fight&quot; in a specific sequence. Case #3 used single words sporadically but did not participate in conversations or use language for social communication. He showed some sensory-seeking behaviors, such as touching and manipulating the toys closely.</p>
+<p>Case #3 did not engage in reciprocal play with the evaluator or his mother, preferring solitary, repetitive play. He demonstrated no sensory sensitivity to noise or bright lights, and he was unable to transition out of the office. Leaving his favorite toys behind triggered a meltdown.</p>
+<p>Case #3 did not make consistent eye contact or direct facial expressions towards the evaluator. He was not observed to engage in joint referencing with the evaluator or his mother. He did not demonstrate the ability to mimic behavior. Case #3 did not engage in reciprocal interaction during free play and did not follow the evaluator’s prompts to participate in the different modules.</p>
+<p>Restricted and Repetitive Behavior</p>
+<p>Case #3 became hyper-focused on specific toys and played with them in a repetitive sequence.</p>
+<p>The SRS-2 was completed. the mother rated Case #3 on five subscale areas: Social Awareness, Social Cognition, Social Communication, Social Motivation, and Autistic Mannerisms. Case #3’s overall score fell into the Normal range (T-Score=43). Scores in this range are generally not associated with clinically significant autism spectrum disorders and suggest that Case #3 does not exhibit severe interference in everyday social interactions.</p>
+<p>These scores are not an accurate representation of the social deficits observed and reported during the phone interview and office observation. It seems that the mother did not understand the questions or rating system as the skills endorsed are not present.</p>
+<p>SRS-2 Subscale Descriptions</p>
+<p>Social Awareness: Ability to pick up on social cues. (T-Score=37) Social Cognition: Ability to interpret social cues once they are picked up. (T-Score=49) Social Communication: Includes expressive social communication. (T-Score=44) Social Motivation: The extent to which a respondent is generally motivated to engage in social-interpersonal behavior; elements of social anxiety, inhibition, and empathic orientation are included here. (T-Score=41) Autistic Mannerisms: Includes stereotypical behaviors or highly restricted interests. characteristics of autism. (T-Score=44)</p>
+<p>Total T-Scores of 76T or higher = Severe range Scores in this range are strongly associated with a clinical diagnosis of Autistic Disorder. They suggest severe interference in everyday social interactions. In most clinical and educational settings, SRS scores at or above 76T from two separate informants provide very strong evidence of the presence of a clinically diagnosable autism spectrum disorder.</p>
+<p>Total T-Scores of 60T-75T= Mild to moderate range Scores in this range indicate deficiencies in reciprocal social behavior that are clinically significant and result in mild to moderate interference in everyday social interactions. These scores are typical for children with mild or “high functioning” autism spectrum disorders.</p>
+<p>Total T-Scores of 59T or less= Normal range Children in the general population and not affected by autism spectrum conditions typically obtain scores in this range. When obtained on ratings in clinical settings, scores in this range usually suggest the absence of an autism spectrum condition, and any psychosocial dysfunction noted at referral is more likely to be due to a non-autism-related condition. Rarely, children with very mild, “high functioning” autism spectrum conditions may be rated in the upper end of this range (55T-59T)</p>
+<h4>Diagnostic Impressions:</h4>
+<h4>DSM-V</h4>
+<p>299.0 (F84.0) Autism Spectrum Disorder with accompanying language impairment, with accompanying Intellectual impairment*</p>
+<p>Level 2 Social Communication</p>
+<p>Level 3 Repetitive/Restrictive Behavior</p>
+<p>315.8 (F88) Global Developmental Delay</p>
+<p>*Intellectual Impairment is only made Provisionally</p>
+<h4>Discussion and Recommendations:</h4>
+<p>Case #3 is a four-year-old Latin American male, referred by Harbor Regional Center for an Autism Spectrum Disorder assessment. Case #3’s behavioral and developmental concerns were identified when he was approximately two years old. At that time, he was not babbling like other children his age and had a noticeable speech delay. Additionally, Case #3 engaged in repetitive behaviors and struggled with social interactions.</p>
+<p>The following criteria from DSM 5 for Autistic Disorder have been identified:</p>
+<p>A.  Persistent deficits in social communication and social interaction across contexts, not accounted for by general developmental delays and manifested by:</p>
+<p>A1. Deficits in social-emotional reciprocity</p>
+<p>Case #3 does not engage in reciprocal social interactions with peers or family members consistently. He does not make eye contact, respond when his name is called, or seek out others for shared enjoyment.</p>
+<p>A2. Deficits in nonverbal communicative behaviors</p>
+<p>Case #3&#x27;s use of communicative gestures is limited. He primarily communicates his needs by pointing and leading by the hand.</p>
+<p>A3. Deficits in developing and maintaining relationships.</p>
+<p>Case #3 engages in some imaginary play independently, but his play is repetitive and does not involve others. He often gets too close to others without understanding social boundaries.</p>
+<p>As described in the Behavioral Observations above, Case #3’s behavior met three out of three criteria. He was not observed to engage in age-appropriate reciprocal social interaction at any time during the testing session. Case #3 does not maintain eye contact, engage in joint referencing activities, or participate in reciprocal play. Case #3 does not consistently respond when his name is called. His interaction with peers lacks reciprocity. Case #3 does not participate in conversations or use communicative gestures except when prompted.</p>
+<p>Restricted, repetitive patterns of behavior, interests, or activities manifested by at least 2 of four symptoms.</p>
+<p>B1. Stereotyped or repetitive speech, motor movements, or use of objects.</p>
+<p>Case #3 engages in hand flapping when excited and lines up his toys in a repetitive sequence.</p>
+<p>B2. Excessive adherence to routines, ritualized patterns of verbal or non-verbal</p>
+<p>behavior, or excessive resistance to change.</p>
+<p>Case #3 exhibits significant difficulty with transitions and becomes emotionally overwhelmed when routines are disrupted.</p>
+<p>B3. Highly restricted, fixated interests that are abnormal in intensity or focus.</p>
+<p>Case #3 has a strong preoccupation with dinosaurs and engages with them in a repetitive manner.</p>
+<p>B4. Hyper or hypo-reactivity to sensory input or unusual interest in sensory aspects</p>
+<p>of the environment.</p>
+<p>He did not display hypersensitivity to common sensory stimuli like noise or bright lights but showed a significant interest in sensory aspects of his environment, such as the texture and feel of objects. At the end of the session he had a meltdown lasting more than 30 minutes triggered by his not being allowed to take testing toys and having to end session.</p>
+<p>A.  Symptoms must be present in early childhood.</p>
+<p>B.  Symptoms together limit and impair everyday functioning.</p>
+<p>Case #3’s symptoms significantly impact his daily functioning.</p>
+<p>Due to the low scores on the cognitive measure and adaptive deficits, Case #3 also meets the criteria for a diagnosis of Global Developmental Delay. This diagnosis is most appropriate when there is evidence of cognitive delay, but the individual’s skills cannot be reliably measured using a standardized cognitive testing measure.</p>
+<h4>Recommendations:</h4>
+<p>1.  Follow up with Case #3&#x27;s HRC service coordinator regarding support and services.</p>
+<p>2.  Case #3 should be evaluated by a licensed speech and language pathologist and receive speech therapy as determined appropriate.</p>
+<p>3.  Case #3 should be evaluated by the school district. He would benefit from special education services with an eligibility of Autism and Developmental Delay.</p>
+<p>4.  Case #3 should be evaluated by a behaviorist and receive ABA therapy as determined.</p>
+<p>5.  Case #3 should be evaluated by an Occupational therapist to determine if there are sensory processing deficits that should be the target of therapy.</p>
+<p>6.  Case #3’s caregivers would benefit from support groups and community resources for individuals with ASD and their families.</p>
+<p>7.  Case #3 should be evaluated for cognitive functioning in approximately two years for diagnostic clarity related to cognitive impairment.</p>
+<p>8.  A copy of this report should be provided to the primary care physician to facilitate coordination of care.</p>
+<p>9.  A copy of this report should be provided to the school district</p>
+<p>Please contact me should you have any further questions.</p>
+<p>[]</p>
+<p>Test Data</p>
+<h4>DAYC-2</h4>
+<p>Cognitive Ability Index=74 Poor Range</p>
+<p>ADOS-2 Module 1</p>
+<p>------------------------------------- ---- ------------------ Social Affect                         18 Restricted and Repetitive Behaviors   4 Total Score                           22 Comparison Score                      10   Autism Cutoff=10 ------------------------------------- ---- ------------------</p>
+<h4>ADI-R</h4>
+<p>------------------------------------------------- ---------- ---------------------- Abnormalities in Reciprocal Social Interaction    Score=22   Diagnostic Cutoff=10 Abnormalities in Communication                    Score =7   Diagnostic Cutoff=7 Restricted and Stereotypic Patterns of Interest   Score=3    Diagnostic Cutoff=3 ------------------------------------------------- ---------- ----------------------</p>
+<p>ABAS-2 **Scores are an overestimation of Case #3’s skills. True ability falls in the Low range.</p>
+<p>------------------------------------------------------------------------------------------------ ---------------------- ---------------- ----------------- -------------------------- Sum of Scaled Scores to General Adaptive Composite (GAC) and Adaptive Domain Score Conversions Sum of scaled scores   Standard score   Percentile rank   Confidence interval: 95% General Adaptive Composite (GAC)                                                                 73                     82               12                78 - 86 Conceptual                                                                                       15                     71               3                 65 - 77 Social                                                                                           17                     90               25                82 - 98 Practical                                                                                        33                     89               23                83 - 95 ------------------------------------------------------------------------------------------------ ---------------------- ---------------- ----------------- --------------------------</p>
+<p>SRS-2 Parent Report **Scores are an overestimation of Case #3’s skills. True ability falls in the Severe range.</p>
+<p>----------------------------------------------- ------------ --------------- Treatment Subscales Social Awareness                                T-Score=37   Range= Normal Social Cognition                                T-Score=49   Range=Normal Social Communication                            T-Score=44   Range= Normal Social Motivation                               T-Score=41   Range= Normal Restricted Interests and Repetitive Behaviors   T-Score=44   Range= Normal DSM-5 Compatible Subscales Social Communication and Interaction            T-Score=43   Range= Normal Restricted Interests and Repetitive Behavior    T-Score=44   Range= Normal Total                                           T-Score=43   Range= Normal ----------------------------------------------- ------------ ---------------</p></div></details>
+
+<div class="foot">Consulting Collective · SCLARC Report Writing Course · Facilitated by Krystel Edmonds-Biglow, Psy.D. · For internal training use. De-identified examples; verify de-identification before external sharing. Built from the SCLARC Standards for Psychological Evaluations, DSM-5-TR, and the practice’s report-writing packets.</div>
+</main>
+</div>
+</body></html>
