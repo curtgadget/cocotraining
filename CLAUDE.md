@@ -13,10 +13,13 @@ There are no tests or linters configured.
 
 ## Architecture
 
-Single-page Astro site (SSR, `output: 'server'`, `@astrojs/cloudflare` adapter) deployed to Cloudflare Workers, serving one protected HTML document behind HTTP Basic Auth.
+Astro site (SSR, `output: 'server'`, `@astrojs/cloudflare` adapter) deployed to Cloudflare Workers, serving self-contained HTML course documents behind HTTP Basic Auth.
 
-- `src/content/SCLARC_Report_Writing_Course.html` — the entire site content, a self-contained HTML document. It is imported as a raw string, **not** rendered as an Astro template: its CSS braces would break Astro's expression parser, and placing it in `public/` would serve it as a static asset without running middleware, bypassing auth.
-- `src/pages/index.ts` — the only route; an endpoint returning the raw HTML with `Content-Type: text/html`.
+- `src/content/*.html` — the course content, self-contained HTML documents. Each is imported as a raw string, **not** rendered as an Astro template: their CSS braces would break Astro's expression parser, and placing them in `public/` would serve them as static assets without running middleware, bypassing auth.
+- `src/pages/psych-writing.ts` — serves `SCLARC_Report_Writing_Course.html` (psych report writing training).
+- `src/pages/onboarding.ts` — serves `CoCo_Onboarding_Course.html` (doctoral practicum onboarding training).
+- `src/pages/index.ts` — landing page with links to both courses (inline HTML string, no content file).
+- All routes are endpoints returning raw HTML with `Content-Type: text/html`.
 - `src/middleware.ts` — enforces Basic Auth on every request. Credentials are read via `import { env } from 'cloudflare:workers'` (Astro v6+ removed `locals.runtime.env`). Do **not** fall back to `import.meta.env` for secrets — those get inlined into the bundle at build time. Comparison is timing-safe. Missing credentials → 500, wrong/absent auth → 401 with `WWW-Authenticate`.
 - `session: false` in `astro.config.mjs` — without it the adapter auto-requires a `SESSION` KV namespace binding at deploy time.
 
