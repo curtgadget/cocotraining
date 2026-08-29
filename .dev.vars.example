@@ -1,0 +1,5 @@
+# Credentials for HTTP Basic Auth, used by astro dev / wrangler dev.
+# Copy to .dev.vars and set real values. In production, set these as
+# Secrets on the Worker (Settings -> Variables and Secrets).
+BASIC_AUTH_USER=
+BASIC_AUTH_PASSWORD=

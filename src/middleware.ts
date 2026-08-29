@@ -1,8 +1,6 @@
 import { defineMiddleware } from 'astro:middleware';
+import { env } from 'cloudflare:workers';
 import { timingSafeEqual } from 'node:crypto';
-
-const USER = process.env.BASIC_AUTH_USER ?? import.meta.env.BASIC_AUTH_USER;
-const PASS = process.env.BASIC_AUTH_PASSWORD ?? import.meta.env.BASIC_AUTH_PASSWORD;
 
 function safeEqual(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -11,7 +9,12 @@ function safeEqual(a: string, b: string): boolean {
 }
 
 export const onRequest = defineMiddleware((context, next) => {
-  if (!USER || !PASS) {
+  // Secrets come from Cloudflare: the dashboard's Variables and Secrets in
+  // production, .dev.vars locally.
+  const expectedUser = env.BASIC_AUTH_USER;
+  const expectedPass = env.BASIC_AUTH_PASSWORD;
+
+  if (!expectedUser || !expectedPass) {
     return new Response(
       'Server misconfigured: BASIC_AUTH_USER and BASIC_AUTH_PASSWORD must be set.',
       { status: 500 },
@@ -25,7 +28,7 @@ export const onRequest = defineMiddleware((context, next) => {
     if (separator > -1) {
       const user = decoded.slice(0, separator);
       const pass = decoded.slice(separator + 1);
-      if (safeEqual(user, USER) && safeEqual(pass, PASS)) {
+      if (safeEqual(user, expectedUser) && safeEqual(pass, expectedPass)) {
         return next();
       }
     }
